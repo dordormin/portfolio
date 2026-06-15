@@ -1,0 +1,8 @@
+services:
+  portfolio:
+    build: .
+    image: ghcr.io/${GITHUB_REPOSITORY:-dordormin/portfolio}:latest
+    container_name: dordor_portfolio
+    ports:
+      - "8085:80"
+    restart: unless-stopped
