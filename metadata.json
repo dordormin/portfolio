@@ -1,0 +1,6 @@
+{
+  "name": "Dordor Minetdi Portfolio",
+  "description": "Interactive Full Stack Developer portfolio with 3D canvas and parallax animations, featuring project case studies.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
