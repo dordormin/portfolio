@@ -70,7 +70,7 @@ export function Navbar({ viewMode, setViewMode }: NavbarProps) {
         </Magnetic>
       </div>
 
-      <div className="flex flex-row md:flex-col gap-6 sm:gap-8 md:gap-8 lg:gap-10 overflow-x-auto [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none] items-center flex-1 min-w-0 justify-start md:justify-center md:w-full py-4 pl-6 sm:pl-8 md:pl-0 pr-6 sm:pr-8 md:pr-0">
+      <div className="flex flex-row md:flex-col gap-6 sm:gap-8 md:gap-6 lg:gap-8 overflow-x-auto md:overflow-x-hidden md:overflow-y-auto [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none] items-center flex-1 min-w-0 md:min-h-0 justify-start md:justify-center md:w-full py-4 pl-6 sm:pl-8 md:pl-0 pr-6 sm:pr-8 md:pr-0">
         {navItems.map((item) => {
           const Icon = item.icon;
           const isActive = activeSegment === item.href.substring(1) && viewMode === 'portfolio';
