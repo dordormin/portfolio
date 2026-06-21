@@ -1,5 +1,6 @@
 import React, { createContext, useContext, ReactNode } from "react";
 import { cn } from "@/lib/utils";
+import { useSoundContext } from "@/contexts/SoundContext";
 
 const SectionRowContext = createContext<boolean | null>(null);
 
@@ -18,10 +19,20 @@ interface SectionRowProps {
 }
 
 export function SectionRow({ children, className, onClick }: SectionRowProps) {
+  const { playHover, playClick } = useSoundContext();
+
+  const handleClick = () => {
+    if (onClick) {
+      playClick();
+      onClick();
+    }
+  };
+
   return (
     <SectionRowContext.Provider value={true}>
       <div 
-        onClick={onClick}
+        onClick={onClick ? handleClick : undefined}
+        onMouseEnter={() => playHover()}
         className={cn(
           "group flex flex-col lg:flex-row items-start justify-between gap-8 lg:gap-16 py-12 md:py-20 border-b border-white/10 transition-colors",
           onClick && "cursor-pointer",

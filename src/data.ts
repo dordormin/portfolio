@@ -17,12 +17,12 @@ export const translations = {
       { category: "DevOps & Quality", items: ["Docker & CI/CD", "AWS Cloud", "Agile & Jira", "TDD & Testing"] },
     ],
     certifications: [
-      { title: "Machine Learning Specialization", issuer: "Stanford / DeepLearning.AI", date: "April 2023", logo: "https://imageio.forbes.com/specials-images/imageserve/5d52d1ad2d95e3000804cc8e/0x0.jpg?format=jpg&crop=416,416,x0,y0,safe&height=87&width=87", logo2: "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F125559383%2F317212851579%2F1%2Foriginal.20210208-232017?w=2000&auto=format%2Ccompress&q=75&sharp=10&rect=0%2C0%2C2246%2C2246&s=919cdfc2673fbb29324d190e36bf0c71" },
-      { title: "Deep Learning Specialization", issuer: "DeepLearning.AI", date: "Ongoing", logo: "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F125559383%2F317212851579%2F1%2Foriginal.20210208-232017?w=2000&auto=format%2Ccompress&q=75&sharp=10&rect=0%2C0%2C2246%2C2246&s=919cdfc2673fbb29324d190e36bf0c71" },
-      { title: "Microsoft Certified: Azure Developer Associate", issuer: "Microsoft", date: "Ongoing", logo: "https://upload.wikimedia.org/wikipedia/commons/9/96/Microsoft_logo_%282012%29.svg" },
-      { title: "AWS Cloud Practitioner", issuer: "AWS", date: "Ongoing", logo: "https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg" },
-      { title: "Become a Software Architect", issuer: "LinkedIn Learning", date: "December 2022", logo: "https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png" },
-      { title: "Web & App Development Certification", issuer: "Acerfi Cameroun", date: "2016", logo: "https://www.acerfi.net/brand/logo-mark.png" }
+      { title: "AWS Cloud Practitioner", issuer: "AWS", date: "Cloud Architecture", logo: "https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg" },
+      { title: "Microsoft Certified: Azure Developer Associate", issuer: "Microsoft", date: "Cloud Native Engineering", logo: "https://upload.wikimedia.org/wikipedia/commons/9/96/Microsoft_logo_%282012%29.svg" },
+      { title: "Deep Learning Specialization", issuer: "DeepLearning.AI", date: "Advanced Neural Networks", logo: "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F125559383%2F317212851579%2F1%2Foriginal.20210208-232017?w=2000&auto=format%2Ccompress&q=75&sharp=10&rect=0%2C0%2C2246%2C2246&s=919cdfc2673fbb29324d190e36bf0c71" },
+      { title: "Machine Learning Specialization", issuer: "Stanford / DeepLearning.AI", date: "Predictive AI & Data", logo: "https://imageio.forbes.com/specials-images/imageserve/5d52d1ad2d95e3000804cc8e/0x0.jpg?format=jpg&crop=416,416,x0,y0,safe&height=87&width=87", logo2: "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F125559383%2F317212851579%2F1%2Foriginal.20210208-232017?w=2000&auto=format%2Ccompress&q=75&sharp=10&rect=0%2C0%2C2246%2C2246&s=919cdfc2673fbb29324d190e36bf0c71" },
+      { title: "Become a Software Architect", issuer: "LinkedIn Learning", date: "System Design Mastery", logo: "https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png" },
+      { title: "Web & App Development Certification", issuer: "Acerfi Cameroun", date: "Full Stack Foundation", logo: "https://www.acerfi.net/brand/logo-mark.png" }
     ],
     education: [
       {
@@ -257,12 +257,12 @@ export const translations = {
       { category: "DevOps & Qualité", items: ["Docker & CI/CD", "AWS Cloud", "Agile & Jira", "TDD & Tests"] },
     ],
     certifications: [
-      { title: "Spécialisation Machine Learning", issuer: "Stanford / DeepLearning.AI", date: "Avril 2023", logo: "https://imageio.forbes.com/specials-images/imageserve/5d52d1ad2d95e3000804cc8e/0x0.jpg?format=jpg&crop=416,416,x0,y0,safe&height=87&width=87", logo2: "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F125559383%2F317212851579%2F1%2Foriginal.20210208-232017?w=2000&auto=format%2Ccompress&q=75&sharp=10&rect=0%2C0%2C2246%2C2246&s=919cdfc2673fbb29324d190e36bf0c71" },
-      { title: "Spécialisation Deep Learning", issuer: "DeepLearning.AI", date: "En cours", logo: "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F125559383%2F317212851579%2F1%2Foriginal.20210208-232017?w=2000&auto=format%2Ccompress&q=75&sharp=10&rect=0%2C0%2C2246%2C2246&s=919cdfc2673fbb29324d190e36bf0c71" },
-      { title: "Microsoft Certified: Azure Developer Associate", issuer: "Microsoft", date: "En cours", logo: "https://upload.wikimedia.org/wikipedia/commons/9/96/Microsoft_logo_%282012%29.svg" },
-      { title: "AWS Cloud Practitioner", issuer: "AWS", date: "En cours", logo: "https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg" },
-      { title: "Devenir Architecte Logiciel", issuer: "LinkedIn Learning", date: "Décembre 2022", logo: "https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png" },
-      { title: "Formation Développement Web & App", issuer: "Acerfi Cameroun", date: "2016", logo: "https://www.acerfi.net/brand/logo-mark.png" }
+      { title: "AWS Cloud Practitioner", issuer: "AWS", date: "Architecture Cloud", logo: "https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg" },
+      { title: "Microsoft Certified: Azure Developer Associate", issuer: "Microsoft", date: "Ingénierie Cloud Native", logo: "https://upload.wikimedia.org/wikipedia/commons/9/96/Microsoft_logo_%282012%29.svg" },
+      { title: "Spécialisation Deep Learning", issuer: "DeepLearning.AI", date: "Réseaux de Neurones Avancés", logo: "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F125559383%2F317212851579%2F1%2Foriginal.20210208-232017?w=2000&auto=format%2Ccompress&q=75&sharp=10&rect=0%2C0%2C2246%2C2246&s=919cdfc2673fbb29324d190e36bf0c71" },
+      { title: "Spécialisation Machine Learning", issuer: "Stanford / DeepLearning.AI", date: "IA Prédictive & Données", logo: "https://imageio.forbes.com/specials-images/imageserve/5d52d1ad2d95e3000804cc8e/0x0.jpg?format=jpg&crop=416,416,x0,y0,safe&height=87&width=87", logo2: "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F125559383%2F317212851579%2F1%2Foriginal.20210208-232017?w=2000&auto=format%2Ccompress&q=75&sharp=10&rect=0%2C0%2C2246%2C2246&s=919cdfc2673fbb29324d190e36bf0c71" },
+      { title: "Devenir Architecte Logiciel", issuer: "LinkedIn Learning", date: "Maîtrise de l'Architecture", logo: "https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png" },
+      { title: "Formation Développement Web & App", issuer: "Acerfi Cameroun", date: "Fondations Full Stack", logo: "https://www.acerfi.net/brand/logo-mark.png" }
     ],
     education: [
       {
