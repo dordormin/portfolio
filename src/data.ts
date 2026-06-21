@@ -30,7 +30,7 @@ export const translations = {
         institution: "Université de Sherbrooke",
         location: "Sherbrooke, QC, Canada",
         period: "2018 - 2022",
-        logo: "/assets/udes-logo.png",
+        logo: "https://yt3.googleusercontent.com/7Cl2wU6IMbRdrOw-BmVgJw8lNpXtcdg4QEYDhC21WPHisOCkIuhN6rahTxCR_1ytUpnM-o9Y=s900-c-k-c0x00ffffff-no-rj",
         highlights: [
           "Specialized concentration in Full Stack Web and Software Development.",
           "Completed multiple corporate co-ops, integrating academic theory with hands-on enterprise software engineering.",
@@ -264,7 +264,7 @@ export const translations = {
         institution: "Université de Sherbrooke",
         location: "Sherbrooke, QC, Canada",
         period: "2018 - 2022",
-        logo: "/assets/udes-logo.png",
+        logo: "https://yt3.googleusercontent.com/7Cl2wU6IMbRdrOw-BmVgJw8lNpXtcdg4QEYDhC21WPHisOCkIuhN6rahTxCR_1ytUpnM-o9Y=s900-c-k-c0x00ffffff-no-rj",
         highlights: [
           "Concentration en développement web et logiciel (Full Stack).",
           "Réalisation de plusieurs stages coopératifs en entreprise, fusionnant théorie académique et ingénierie logicielle en milieu corporatif.",
