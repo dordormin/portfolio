@@ -12,6 +12,7 @@ import * as THREE from "three";
 import { BlogJourney3D } from "./BlogJourney3D";
 import { useSoundContext } from "@/contexts/SoundContext";
 import { toneEngine } from "@/utils/ToneEngine";
+import { hardwareProfiler } from "@/utils/HardwareProfiler";
 
 // Global mouse tracker
 const mouse = { x: 0, y: 0 };
@@ -22,7 +23,7 @@ if (typeof window !== "undefined") {
   });
 }
 
-function ShaderBlob() {
+function ShaderBlob({ isMobile }: { isMobile?: boolean }) {
   const meshRef = useRef<THREE.Mesh>(null);
   const materialRef = useRef<THREE.ShaderMaterial>(null);
 
@@ -216,8 +217,10 @@ function ShaderBlob() {
     toneEngine.setModulation(scrollProgress);
   });
 
+  const settings = hardwareProfiler.getSettings();
+
   return (
-    <Icosahedron ref={meshRef} args={[4, 32]} position={[0, -2, -8]}>
+    <Icosahedron ref={meshRef} args={[4, settings.geometrySegments]} position={[0, -2, -8]}>
       <shaderMaterial
         ref={materialRef}
         vertexShader={vertexShader}
@@ -239,7 +242,8 @@ function ParticleCloud({ isMobile }: { isMobile: boolean }) {
   const sphere = useMemo(() => {
     const minRadius = 2;
     const maxRadius = 15;
-    const particlesCount = isMobile ? 300 : 1000;
+    const settings = hardwareProfiler.getSettings();
+    const particlesCount = settings.particleCount;
     const positions = new Float32Array(particlesCount * 3);
 
     for (let i = 0; i < particlesCount; i++) {
@@ -298,6 +302,7 @@ function ParticleCloud({ isMobile }: { isMobile: boolean }) {
 export function BackgroundCanvas({ viewMode }: { viewMode: 'portfolio' | 'blog' }) {
   const [isMobile, setIsMobile] = useState(false);
   const { isMuted } = useSoundContext();
+  const settings = hardwareProfiler.getSettings();
 
   useEffect(() => {
     const checkMobile = () => setIsMobile(window.innerWidth < 768);
@@ -312,14 +317,14 @@ export function BackgroundCanvas({ viewMode }: { viewMode: 'portfolio' | 'blog' 
     <div className="fixed inset-0 z-0 pointer-events-none opacity-60 mix-blend-screen">
       <Canvas 
         camera={{ position: [0, 0, 10] }} 
-        dpr={isMobile ? [1, 1] : [1, 1.5]} 
+        dpr={settings.dpr} 
         gl={{ powerPreference: "high-performance", antialias: false, stencil: false, depth: false }}
       >
         <ParticleCloud isMobile={isMobile} />
-        {viewMode === 'portfolio' && <ShaderBlob />}
+        {viewMode === 'portfolio' && <ShaderBlob isMobile={isMobile} />}
         {viewMode === 'blog' && <BlogJourney3D isMobile={isMobile} />}
 
-        {!isMobile && (
+        {!isMobile && settings.effectsEnabled && (
           <EffectComposer>
             <Bloom
               luminanceThreshold={0.2}

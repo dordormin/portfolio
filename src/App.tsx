@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { BackgroundCanvas } from './components/canvas/BackgroundCanvas';
+import React, { useState, Suspense, lazy } from 'react';
+const BackgroundCanvas = lazy(() => import('./components/canvas/BackgroundCanvas').then(module => ({ default: module.BackgroundCanvas })));
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/sections/Hero';
 import { About } from './components/sections/About';
@@ -32,7 +32,9 @@ export default function App() {
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(20,20,20,0)_0%,rgba(0,0,0,1)_100%)]"></div>
       </div>
       
-      <BackgroundCanvas viewMode={viewMode} />
+      <Suspense fallback={null}>
+        <BackgroundCanvas viewMode={viewMode} />
+      </Suspense>
       
       <Navbar viewMode={viewMode} setViewMode={setViewMode} />
       

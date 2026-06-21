@@ -1,15 +1,19 @@
 import React, { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { useProgress } from "@react-three/drei";
+import { hardwareProfiler } from "@/utils/HardwareProfiler";
 
 export function Loader() {
   const [isLoading, setIsLoading] = useState(true);
   const [mounted, setMounted] = useState(false);
   const { progress: threeProgress, active } = useProgress();
   const [simulatedProgress, setSimulatedProgress] = useState(0);
+  const [hardwareTier, setHardwareTier] = useState<number | null>(null);
 
   useEffect(() => {
     setMounted(true);
+    setHardwareTier(hardwareProfiler.runBenchmark());
+    
     let currentProgress = 0;
     
     // Simulate initial loading sequence
@@ -91,7 +95,7 @@ export function Loader() {
             {/* Log / Status text */}
             <div className="flex justify-between items-center w-full text-[10px] sm:text-xs">
               <span className="text-white/40 font-mono uppercase tracking-[0.2em]">
-                 Initializing Arsenal
+                 {displayProgress < 50 ? "Initializing Arsenal..." : `Hardware Allocation: Tier ${hardwareTier}`}
               </span>
               <span className="text-orange-500 font-mono font-bold tracking-wider">
                 {displayProgress}%
