@@ -22,7 +22,7 @@ export const translations = {
       { title: "Microsoft Certified: Azure Developer Associate", issuer: "Microsoft", date: "Ongoing", logo: "https://upload.wikimedia.org/wikipedia/commons/9/96/Microsoft_logo_%282012%29.svg" },
       { title: "AWS Cloud Practitioner", issuer: "AWS", date: "Ongoing", logo: "https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg" },
       { title: "Become a Software Architect", issuer: "LinkedIn Learning", date: "December 2022", logo: "https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png" },
-      { title: "Web & App Development Certification", issuer: "Acerfi Cameroun", date: "2016" }
+      { title: "Web & App Development Certification", issuer: "Acerfi Cameroun", date: "2016", logo: "https://www.acerfi.net/brand/logo-mark.png" }
     ],
     education: [
       {
@@ -262,7 +262,7 @@ export const translations = {
       { title: "Microsoft Certified: Azure Developer Associate", issuer: "Microsoft", date: "En cours", logo: "https://upload.wikimedia.org/wikipedia/commons/9/96/Microsoft_logo_%282012%29.svg" },
       { title: "AWS Cloud Practitioner", issuer: "AWS", date: "En cours", logo: "https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg" },
       { title: "Devenir Architecte Logiciel", issuer: "LinkedIn Learning", date: "Décembre 2022", logo: "https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png" },
-      { title: "Formation Développement Web & App", issuer: "Acerfi Cameroun", date: "2016" }
+      { title: "Formation Développement Web & App", issuer: "Acerfi Cameroun", date: "2016", logo: "https://www.acerfi.net/brand/logo-mark.png" }
     ],
     education: [
       {
