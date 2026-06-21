@@ -1,6 +1,6 @@
 import { useRef, useMemo, useEffect, useState } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
-import { Points, PointMaterial, Icosahedron, PerformanceMonitor } from "@react-three/drei";
+import { Points, PointMaterial, Icosahedron } from "@react-three/drei";
 import {
   EffectComposer,
   Bloom,
@@ -12,6 +12,7 @@ import * as THREE from "three";
 import { BlogJourney3D } from "./BlogJourney3D";
 import { useSoundContext } from "@/contexts/SoundContext";
 import { toneEngine } from "@/utils/ToneEngine";
+import { hardwareProfiler } from "@/utils/HardwareProfiler";
 
 // Global mouse tracker
 const mouse = { x: 0, y: 0 };
@@ -216,8 +217,10 @@ function ShaderBlob({ isMobile }: { isMobile?: boolean }) {
     toneEngine.setModulation(scrollProgress);
   });
 
+  const settings = hardwareProfiler.getSettings();
+
   return (
-    <Icosahedron ref={meshRef} args={[4, isMobile ? 16 : 32]} position={[0, -2, -8]}>
+    <Icosahedron ref={meshRef} args={[4, settings.geometrySegments]} position={[0, -2, -8]}>
       <shaderMaterial
         ref={materialRef}
         vertexShader={vertexShader}
@@ -239,7 +242,8 @@ function ParticleCloud({ isMobile }: { isMobile: boolean }) {
   const sphere = useMemo(() => {
     const minRadius = 2;
     const maxRadius = 15;
-    const particlesCount = isMobile ? 300 : 1000;
+    const settings = hardwareProfiler.getSettings();
+    const particlesCount = settings.particleCount;
     const positions = new Float32Array(particlesCount * 3);
 
     for (let i = 0; i < particlesCount; i++) {
@@ -297,16 +301,11 @@ function ParticleCloud({ isMobile }: { isMobile: boolean }) {
 
 export function BackgroundCanvas({ viewMode }: { viewMode: 'portfolio' | 'blog' }) {
   const [isMobile, setIsMobile] = useState(false);
-  const [dpr, setDpr] = useState(1.5);
-  const [disableEffects, setDisableEffects] = useState(false);
   const { isMuted } = useSoundContext();
+  const settings = hardwareProfiler.getSettings();
 
   useEffect(() => {
-    const checkMobile = () => {
-      const mobile = window.innerWidth < 768;
-      setIsMobile(mobile);
-      if (mobile) setDpr(1); // Set base DPR for mobile
-    };
+    const checkMobile = () => setIsMobile(window.innerWidth < 768);
     checkMobile();
     window.addEventListener("resize", checkMobile);
     return () => window.removeEventListener("resize", checkMobile);
@@ -318,18 +317,14 @@ export function BackgroundCanvas({ viewMode }: { viewMode: 'portfolio' | 'blog' 
     <div className="fixed inset-0 z-0 pointer-events-none opacity-60 mix-blend-screen">
       <Canvas 
         camera={{ position: [0, 0, 10] }} 
-        dpr={dpr} 
+        dpr={settings.dpr} 
         gl={{ powerPreference: "high-performance", antialias: false, stencil: false, depth: false }}
       >
-        <PerformanceMonitor 
-          onDecline={() => { setDpr(0.5); setDisableEffects(true); }}
-          onIncline={() => { setDpr(isMobile ? 1 : 1.5); setDisableEffects(false); }}
-        />
         <ParticleCloud isMobile={isMobile} />
         {viewMode === 'portfolio' && <ShaderBlob isMobile={isMobile} />}
         {viewMode === 'blog' && <BlogJourney3D isMobile={isMobile} />}
 
-        {!isMobile && !disableEffects && (
+        {!isMobile && settings.effectsEnabled && (
           <EffectComposer>
             <Bloom
               luminanceThreshold={0.2}
