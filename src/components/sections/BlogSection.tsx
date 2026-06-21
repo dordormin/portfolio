@@ -60,7 +60,7 @@ export function BlogSection() {
           >
             {/* The wrapper that actually animates opacity and Y position */}
             <div className="content-wrapper opacity-0 translate-y-12 w-full bg-black/60 backdrop-blur-md border border-white/10 p-8 md:p-16 rounded-3xl shadow-2xl">
-              <div className="flex flex-col items-start gap-4">
+              <div className="flex flex-col items-center text-center gap-4">
                 <span className="text-orange-500 font-mono text-sm tracking-widest uppercase border border-orange-500/30 px-3 py-1 rounded-full bg-orange-500/10">
                   {post.date}
                 </span>
@@ -68,19 +68,31 @@ export function BlogSection() {
                   {post.title}
                 </h2>
                 
-                <div className="w-12 h-[1px] bg-white/20 my-6"></div>
+                <div className="w-12 h-[1px] bg-white/20 mx-auto my-6"></div>
                 
                 <p className="text-white/70 text-lg md:text-xl lg:text-2xl font-light leading-relaxed">
                   {post.content}
                 </p>
 
-                <div className="flex flex-wrap gap-3 mt-8">
+                <div className="flex flex-wrap justify-center gap-3 mt-8">
                   {post.tags.map(tag => (
                     <span key={tag} className="text-xs font-mono uppercase tracking-widest text-white/40 border border-white/10 px-4 py-2 rounded-full">
                       {tag}
                     </span>
                   ))}
                 </div>
+
+                {/* External Link */}
+                {post.link && (
+                  <a 
+                    href={post.link} 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="mt-8 px-8 py-3 bg-white text-black font-medium rounded-full hover:bg-orange-500 hover:text-white transition-colors duration-300 pointer-events-auto"
+                  >
+                    {language === 'en' ? 'Read Full Article' : 'Lire l\'article complet'}
+                  </a>
+                )}
               </div>
             </div>
           </div>
