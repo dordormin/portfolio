@@ -104,7 +104,7 @@ export const translations = {
       {
         role: "Web Developer & Designer Intern",
         company: "Creolink Communications",
-        location: "Douala, Cameroon",
+        location: "Yaoundé, Cameroon",
         period: "2017 - 2018",
         responsibilities: [
           "Initiated early career in tech by contributing to the complete web redesign for a prominent local internet service provider.",
@@ -291,7 +291,7 @@ export const translations = {
       {
         role: "Stagiaire Développeur Web & Designer",
         company: "Creolink Communications",
-        location: "Douala, Cameroun",
+        location: "Yaoundé, Cameroun",
         period: "2017 - 2018",
         responsibilities: [
           "Initié mon parcours technologique en participant à la refonte web complète pour un fournisseur local majeur de services internet.",
