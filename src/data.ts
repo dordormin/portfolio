@@ -28,7 +28,7 @@ export const translations = {
       {
         role: "Full Stack Developer",
         company: "COFRD",
-        location: "Oshawa, ON",
+        location: "Oshawa, ON, Canada",
         period: "March 2023 - Present",
         responsibilities: [
           "Architected and maintained robust full-stack web applications, ensuring high performance, scalability, and strict adherence to modern coding standards.",
@@ -44,7 +44,7 @@ export const translations = {
       {
         role: "Analyst Programmer",
         company: "Kolineo",
-        location: "Sherbrooke, QC",
+        location: "Sherbrooke, QC, Canada",
         period: "September 2021 - December 2021",
         responsibilities: [
           "Led full-lifecycle software development as an Analyst Programmer, overseeing requirements analysis, DevOps, and deployment pipelines.",
@@ -59,7 +59,7 @@ export const translations = {
       {
         role: "Data Engineer",
         company: "Université de Sherbrooke",
-        location: "Sherbrooke, QC",
+        location: "Sherbrooke, QC, Canada",
         period: "January 2022 - May 2022",
         responsibilities: [
           "Designed and developed a custom SQL parser and linter evaluating complex queries for over 250 students, reducing manual grading time by 60%.",
@@ -74,7 +74,7 @@ export const translations = {
       {
         role: "Web & IoT Developer, Coop",
         company: "Olympus NDT Canada",
-        location: "Quebec, QC",
+        location: "Quebec, QC, Canada",
         period: "May 2021 - August 2021",
         responsibilities: [
           "Engineered dynamic web applications utilizing C#, ASP.NET MVC, and Angular 6 within an agile, multidisciplinary team.",
@@ -89,7 +89,7 @@ export const translations = {
       {
         role: "Software Developer | QA Engineer, Coop",
         company: "SAP Labs Canada",
-        location: "Montreal, QC",
+        location: "Montreal, QC, Canada",
         period: "January 2020 - April 2020",
         responsibilities: [
           "Developed high-quality software solutions utilizing rigorous Test-Driven Development (TDD) methodologies.",
@@ -241,7 +241,7 @@ export const translations = {
       {
         role: "Développeur Full Stack",
         company: "COFRD",
-        location: "Oshawa, ON",
+        location: "Oshawa, ON, Canada",
         period: "Mars 2023 - Présent",
         responsibilities: [
           "Architecturé et maintenu des applications web full-stack robustes, garantissant de hautes performances, une grande évolutivité et le strict respect des normes de codage modernes.",
@@ -257,7 +257,7 @@ export const translations = {
       {
         role: "Analyste Programmeur",
         company: "Kolineo",
-        location: "Sherbrooke, QC",
+        location: "Sherbrooke, QC, Canada",
         period: "Septembre 2021 - Décembre 2021",
         responsibilities: [
           "Mené le cycle de développement logiciel en tant qu'Analyste Programmeur, supervisant l'analyse des besoins, le DevOps et les pipelines de déploiement.",
@@ -272,7 +272,7 @@ export const translations = {
       {
         role: "Ingénieur de Données",
         company: "Université de Sherbrooke",
-        location: "Sherbrooke, QC",
+        location: "Sherbrooke, QC, Canada",
         period: "Janvier 2022 - Mai 2022",
         responsibilities: [
           "Conçu et développé un parseur et linter SQL personnalisé évaluant les requêtes de plus de 250 étudiants, réduisant le temps de correction manuel de 60%.",
@@ -287,7 +287,7 @@ export const translations = {
       {
         role: "Développeur Web & IoT, Coop",
         company: "Olympus NDT Canada",
-        location: "Québec, QC",
+        location: "Québec, QC, Canada",
         period: "Mai 2021 - Août 2021",
         responsibilities: [
           "Conçu des applications dynamiques avec C#, ASP.NET MVC et Angular 6 au sein d'une équipe agile et pluridisciplinaire.",
@@ -302,7 +302,7 @@ export const translations = {
       {
         role: "Développeur Logiciel | Ingénieur QA, Coop",
         company: "SAP Labs Canada",
-        location: "Montréal, QC",
+        location: "Montréal, QC, Canada",
         period: "Janvier 2020 - Avril 2020",
         responsibilities: [
           "Développé des solutions logicielles en utilisant la méthodologie rigoureuse de Test-Driven Development (TDD).",
