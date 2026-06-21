@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { BackgroundCanvas } from './components/canvas/BackgroundCanvas';
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/sections/Hero';
@@ -13,12 +13,14 @@ import { SmoothScroll } from './components/ui/SmoothScroll';
 import { CustomCursor } from './components/ui/CustomCursor';
 
 export default function App() {
+  const [viewMode, setViewMode] = useState<'portfolio' | 'blog'>('portfolio');
+
   return (
     <SmoothScroll>
       <CustomCursor />
-      <div className="relative min-h-screen flex flex-col md:flex-row text-white antialiased selection:bg-orange-500/30 font-sans bg-background">
+      <div className="relative min-h-screen flex flex-col md:flex-row text-white antialiased selection:bg-orange-500/30 font-sans bg-background overflow-hidden">
         <Loader />
-        <ScrollProgress />
+        {viewMode === 'portfolio' && <ScrollProgress />}
       {/* Atmospheric Background */}
       <div className="fixed inset-0 z-0 pointer-events-none">
         <div className="absolute top-[-20%] left-[-10%] w-[600px] h-[600px] bg-blue-900/20 rounded-full blur-[120px]"></div>
@@ -26,11 +28,11 @@ export default function App() {
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(20,20,20,0)_0%,rgba(0,0,0,1)_100%)]"></div>
       </div>
       
-      <BackgroundCanvas />
+      <BackgroundCanvas viewMode={viewMode} />
       
-      <Navbar />
+      <Navbar viewMode={viewMode} setViewMode={setViewMode} />
       
-      <main className="flex-1 relative z-10 w-full max-w-full">
+      <main className={`flex-1 relative z-10 w-full max-w-full transition-opacity duration-1000 ${viewMode === 'blog' ? 'opacity-0 pointer-events-none' : 'opacity-100'}`}>
         <Hero />
         <About />
         <Experience />
