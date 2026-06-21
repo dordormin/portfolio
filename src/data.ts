@@ -17,8 +17,8 @@ export const translations = {
       { category: "DevOps & Quality", items: ["Docker & CI/CD", "AWS Cloud", "Agile & Jira", "TDD & Testing"] },
     ],
     certifications: [
-      { title: "Machine Learning Specialization", issuer: "Stanford / DeepLearning.AI", date: "April 2023" },
-      { title: "Deep Learning Specialization", issuer: "DeepLearning.AI", date: "Ongoing" },
+      { title: "Machine Learning Specialization", issuer: "Stanford / DeepLearning.AI", date: "April 2023", logo: \"https://imageio.forbes.com/specials-images/imageserve/5d52d1ad2d95e3000804cc8e/0x0.jpg?format=jpg&crop=416,416,x0,y0,safe&height=87&width=87\", logo: \"https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F125559383%2F317212851579%2F1%2Foriginal.20210208-232017?w=2000&auto=format%2Ccompress&q=75&sharp=10&rect=0%2C0%2C2246%2C2246&s=919cdfc2673fbb29324d190e36bf0c71\" },
+      { title: "Deep Learning Specialization", issuer: "DeepLearning.AI", date: "Ongoing", logo: \"https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F125559383%2F317212851579%2F1%2Foriginal.20210208-232017?w=2000&auto=format%2Ccompress&q=75&sharp=10&rect=0%2C0%2C2246%2C2246&s=919cdfc2673fbb29324d190e36bf0c71\" },
       { title: "Microsoft Certified: Azure Developer Associate", issuer: "Microsoft", date: "Ongoing", logo: "https://upload.wikimedia.org/wikipedia/commons/9/96/Microsoft_logo_%282012%29.svg" },
       { title: "AWS Cloud Practitioner", issuer: "AWS", date: "Ongoing", logo: "https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg" },
       { title: "Become a Software Architect", issuer: "LinkedIn Learning", date: "December 2022", logo: "https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png" },
@@ -40,10 +40,11 @@ export const translations = {
     ],
     experience: [
       {
-        role: "Full Stack Developer",
+        role: "Software Developer",
         company: "COFRD",
-        location: "Oshawa, ON, Canada",
-        period: "March 2023 - Present",
+        location: "Sherbrooke, QC, Canada",
+        period: "April 2023 - Present",
+        logo: "https://www.cofrd.org//wp-content/uploads/logo-noBg.png",
         responsibilities: [
           "Architected and maintained robust full-stack web applications, ensuring high performance, scalability, and strict adherence to modern coding standards.",
           "Collaborated closely with cross-functional teams and stakeholders to gather requirements, design intuitive user interfaces, and seamlessly deploy end-to-end solutions.",
@@ -60,6 +61,7 @@ export const translations = {
         company: "Kolineo",
         location: "Sherbrooke, QC, Canada",
         period: "September 2021 - December 2021",
+        logo: "https://media.licdn.com/dms/image/v2/C4E0BAQES0Kqk8LWJcQ/company-logo_200_200/company-logo_200_200/0/1630633975653/flex_logistique_logo?e=2147483647&v=beta&t=fd9TJ4GN3ENSeFRCoGMk44gqQfMAgkqusYND8lR6FQ0",
         responsibilities: [
           "Led full-lifecycle software development as an Analyst Programmer, overseeing requirements analysis, DevOps, and deployment pipelines.",
           "Engineered robust B2B REST APIs and complex ORMs (SQLAlchemy, Python, Django) to integrate Kolineo's warehousing and redistribution systems with external enterprise clients (e.g., Amazon, Costco).",
@@ -91,7 +93,8 @@ export const translations = {
         company: "Olympus NDT Canada",
         location: "Quebec, QC, Canada",
         period: "May 2021 - August 2021",
-        logo: "https://upload.wikimedia.org/wikipedia/commons/4/4c/Olympus_Corporation_logo.svg",
+        logo: \"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSaJigPdwn75wNPt1kX622FLn-UfBKZNipQqg&s\",
+        logo: "https://media.licdn.com/dms/image/v2/D4E0BAQE8aG6Yc4-l-A/company-logo_200_200/company-logo_200_200/0/1684346746849/evident_scientific_logo?e=2147483647&v=beta&t=7J-q5x_Jq5y7j0b5v8M9z4L_x8s2hZ7p6c_w0v6h9e8",
         responsibilities: [
           "Engineered dynamic web applications utilizing C#, ASP.NET MVC, and Angular 6 within an agile, multidisciplinary team.",
           "Actively participated in the full software development lifecycle, from gathering initial requirements to executing production deployments.",
@@ -119,10 +122,12 @@ export const translations = {
         ],
       },
       {
-        role: "Web Developer & Designer Intern",
-        company: "Creolink Communications",
+        role: "Full Stack Developer, Intern",
+        company: "CREOLINK Communications",
         location: "Yaoundé, Cameroon",
-        period: "2017 - 2018",
+        period: "June 2017 - August 2017",
+        logo: \"https://static2.ikwen.com/econnect/img/creolink_logo_portrait.png\",
+        logo: "https://static2.ikwen.com/econnect/img/creolink_logo_portrait.png",
         responsibilities: [
           "Initiated early career in tech by contributing to the complete web redesign for a prominent local internet service provider.",
           "Translated UI/UX wireframes from Adobe Photoshop into responsive layouts using HTML, CSS, Bootstrap, and JavaScript.",
@@ -254,8 +259,8 @@ export const translations = {
       { category: "DevOps & Qualité", items: ["Docker & CI/CD", "AWS Cloud", "Agile & Jira", "TDD & Tests"] },
     ],
     certifications: [
-      { title: "Spécialisation Machine Learning", issuer: "Stanford / DeepLearning.AI", date: "Avril 2023" },
-      { title: "Spécialisation Deep Learning", issuer: "DeepLearning.AI", date: "En cours" },
+      { title: "Spécialisation Machine Learning", issuer: "Stanford / DeepLearning.AI", date: "Avril 2023", logo: \"https://imageio.forbes.com/specials-images/imageserve/5d52d1ad2d95e3000804cc8e/0x0.jpg?format=jpg&crop=416,416,x0,y0,safe&height=87&width=87\", logo: \"https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F125559383%2F317212851579%2F1%2Foriginal.20210208-232017?w=2000&auto=format%2Ccompress&q=75&sharp=10&rect=0%2C0%2C2246%2C2246&s=919cdfc2673fbb29324d190e36bf0c71\" },
+      { title: "Spécialisation Deep Learning", issuer: "DeepLearning.AI", date: "En cours", logo: \"https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F125559383%2F317212851579%2F1%2Foriginal.20210208-232017?w=2000&auto=format%2Ccompress&q=75&sharp=10&rect=0%2C0%2C2246%2C2246&s=919cdfc2673fbb29324d190e36bf0c71\" },
       { title: "Microsoft Certified: Azure Developer Associate", issuer: "Microsoft", date: "En cours", logo: "https://upload.wikimedia.org/wikipedia/commons/9/96/Microsoft_logo_%282012%29.svg" },
       { title: "AWS Cloud Practitioner", issuer: "AWS", date: "En cours", logo: "https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg" },
       { title: "Devenir Architecte Logiciel", issuer: "LinkedIn Learning", date: "Décembre 2022", logo: "https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png" },
@@ -277,10 +282,11 @@ export const translations = {
     ],
     experience: [
       {
-        role: "Développeur Full Stack",
+        role: "Développeur Logiciel",
         company: "COFRD",
-        location: "Oshawa, ON, Canada",
-        period: "Mars 2023 - Présent",
+        location: "Sherbrooke, QC, Canada",
+        period: "Avril 2023 - Présent",
+        logo: "https://www.cofrd.org//wp-content/uploads/logo-noBg.png",
         responsibilities: [
           "Architecturé et maintenu des applications web full-stack robustes, garantissant de hautes performances, une grande évolutivité et le strict respect des normes de codage modernes.",
           "Collaboré étroitement avec des équipes interfonctionnelles pour recueillir les besoins, concevoir des interfaces intuitives et déployer des solutions de bout en bout.",
@@ -293,10 +299,11 @@ export const translations = {
         ],
       },
       {
-        role: "Analyste Programmeur",
+        role: "Développeur Logiciel",
         company: "Kolineo",
         location: "Sherbrooke, QC, Canada",
-        period: "Septembre 2021 - Décembre 2021",
+        period: "Janvier 2022 - Août 2022",
+        logo: "https://media.licdn.com/dms/image/v2/C4E0BAQES0Kqk8LWJcQ/company-logo_200_200/company-logo_200_200/0/1630633975653/flex_logistique_logo?e=2147483647&v=beta&t=fd9TJ4GN3ENSeFRCoGMk44gqQfMAgkqusYND8lR6FQ0",
         responsibilities: [
           "Mené le cycle de développement logiciel en tant qu'Analyste Programmeur, supervisant l'analyse des besoins, le DevOps et les pipelines de déploiement.",
           "Conçu des API REST B2B et des modèles ORM (SQLAlchemy, Python, Django) pour intégrer les systèmes d'entreposage et de redistribution de Kolineo avec des clients entreprises (ex: Amazon, Costco).",
@@ -328,7 +335,8 @@ export const translations = {
         company: "Olympus NDT Canada",
         location: "Québec, QC, Canada",
         period: "Mai 2021 - Août 2021",
-        logo: "https://upload.wikimedia.org/wikipedia/commons/4/4c/Olympus_Corporation_logo.svg",
+        logo: \"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSaJigPdwn75wNPt1kX622FLn-UfBKZNipQqg&s\",
+        logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSaJigPdwn75wNPt1kX622FLn-UfBKZNipQqg&s",
         responsibilities: [
           "Conçu des applications dynamiques avec C#, ASP.NET MVC et Angular 6 au sein d'une équipe agile et pluridisciplinaire.",
           "Participé au cycle complet de développement logiciel, de l'analyse des besoins aux déploiements en production.",
