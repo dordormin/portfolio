@@ -50,7 +50,7 @@ export function Navbar({ viewMode, setViewMode }: NavbarProps) {
   return (
     <nav
       className={cn(
-        "w-full md:w-20 lg:w-24 border-b md:border-b-0 md:border-r border-border flex flex-row md:flex-col items-center justify-between md:py-6 bg-black/40 backdrop-blur-xl shrink-0 sticky top-0 z-50 md:h-screen"
+        "fixed top-0 left-0 w-full md:w-20 lg:w-24 border-b md:border-b-0 md:border-r border-border flex flex-row md:flex-col items-center justify-between md:py-6 bg-black/40 backdrop-blur-xl shrink-0 z-50 md:h-screen"
       )}
     >
       <div className="flex flex-row md:flex-col items-center gap-6 sm:gap-8 shrink-0 pr-6 sm:pr-8 md:pr-0 md:w-full border-r border-border md:border-r-0 md:border-b py-4 md:py-0 px-6 sm:px-8 md:px-0 md:pb-4 lg:pb-6 self-stretch md:self-auto">
