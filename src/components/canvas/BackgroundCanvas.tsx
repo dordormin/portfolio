@@ -9,7 +9,7 @@ import {
 } from "@react-three/postprocessing";
 import { BlendFunction } from "postprocessing";
 import * as THREE from "three";
-import { BlogGallery } from "./BlogGallery";
+import { BlogJourney3D } from "./BlogJourney3D";
 
 // Global mouse tracker
 const mouse = { x: 0, y: 0 };
@@ -309,7 +309,7 @@ export function BackgroundCanvas({ viewMode }: { viewMode: 'portfolio' | 'blog' 
       >
         <ParticleCloud isMobile={isMobile} />
         {viewMode === 'portfolio' && <ShaderBlob />}
-        {viewMode === 'blog' && <BlogGallery isMobile={isMobile} />}
+        {viewMode === 'blog' && <BlogJourney3D isMobile={isMobile} />}
 
         {!isMobile && (
           <EffectComposer>
