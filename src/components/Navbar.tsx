@@ -130,25 +130,37 @@ export function Navbar({ viewMode, setViewMode }: NavbarProps) {
         <Magnetic intensity={0.3}>
           <button
             onClick={() => setViewMode(viewMode === 'blog' ? 'portfolio' : 'blog')}
-            className="group relative flex items-center justify-center p-2 transition-all duration-300"
+            className="group relative flex flex-row md:flex-col items-center justify-center gap-3 md:py-2 transition-all duration-500"
           >
             {/* Active Indicator Line */}
             <span className={cn(
-              "absolute -left-3 md:-left-4 lg:-left-6 w-1 rounded-r-full bg-blue-500 transition-all duration-300",
+              "absolute -left-3 md:-left-4 lg:-left-6 w-1 rounded-r-full bg-blue-500 transition-all duration-500",
               viewMode === 'blog' ? "h-1/2 opacity-100" : "h-0 opacity-0"
             )} />
 
             <BookOpen className={cn(
-              "w-5 h-5 md:w-6 md:h-6 transition-all duration-300",
+              "w-5 h-5 md:w-6 md:h-6 shrink-0 transition-all duration-500",
               viewMode === 'blog' ? "text-blue-500 scale-110" : "text-white/40 group-hover:text-blue-400"
             )} />
 
-            {/* Modern Tooltip */}
-            <div className="absolute left-full ml-4 md:ml-8 px-4 py-2 bg-black/90 border border-white/10 rounded-lg backdrop-blur-md opacity-0 -translate-x-4 pointer-events-none transition-all duration-300 group-hover:opacity-100 group-hover:translate-x-0 hidden md:block z-50">
-              <span className="text-xs uppercase tracking-widest text-white whitespace-nowrap font-medium">
+            {/* Expanding Vertical Text (Desktop only) */}
+            <div className={cn(
+              "hidden md:block overflow-hidden transition-all duration-500 ease-in-out",
+              viewMode === 'blog' ? "max-h-40 opacity-100" : "max-h-0 opacity-0"
+            )}>
+              <span className="[writing-mode:vertical-rl] rotate-180 text-[10px] uppercase tracking-[0.3em] font-semibold text-blue-500 whitespace-nowrap">
                 {language === 'en' ? 'Blog 3D' : 'Blog 3D'}
               </span>
             </div>
+
+            {/* Tooltip for inactive state */}
+            {viewMode !== 'blog' && (
+              <div className="absolute left-full ml-4 md:ml-8 px-4 py-2 bg-black/90 border border-white/10 rounded-lg backdrop-blur-md opacity-0 -translate-x-4 pointer-events-none transition-all duration-300 group-hover:opacity-100 group-hover:translate-x-0 hidden md:block z-50">
+                <span className="text-xs uppercase tracking-widest text-white whitespace-nowrap font-medium">
+                  {language === 'en' ? 'Blog 3D' : 'Blog 3D'}
+                </span>
+              </div>
+            )}
           </button>
         </Magnetic>
       </div>
