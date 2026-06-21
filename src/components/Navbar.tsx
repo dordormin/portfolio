@@ -3,7 +3,7 @@ import { cn } from "@/lib/utils";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { Magnetic } from "./ui/Magnetic";
 import { Logo } from "./ui/Logo";
-import { Home, User, GraduationCap, Briefcase, FolderGit2, BookOpen, Volume2, VolumeX } from "lucide-react";
+import { Home, Terminal, GraduationCap, Briefcase, FolderGit2, BookOpen, Volume2, VolumeX } from "lucide-react";
 import { useSoundContext } from "@/contexts/SoundContext";
 
 interface NavbarProps {
@@ -18,7 +18,7 @@ export function Navbar({ viewMode, setViewMode }: NavbarProps) {
 
   const navItems = [
     { name: language === "en" ? "Home" : "Accueil", href: "#hero", icon: Home },
-    { name: language === "en" ? "About" : "À propos", href: "#about", icon: User },
+    { name: language === "en" ? "Skills" : "Compétences", href: "#about", icon: Terminal },
     { name: language === "en" ? "Education" : "Formation", href: "#education", icon: GraduationCap },
     { name: language === "en" ? "Experience" : "Expérience", href: "#experience", icon: Briefcase },
     { name: language === "en" ? "Projects" : "Projets", href: "#projects", icon: FolderGit2 },
@@ -107,7 +107,7 @@ export function Navbar({ viewMode, setViewMode }: NavbarProps) {
 
                 <Icon className={cn(
                   "w-5 h-5 md:w-6 md:h-6 shrink-0 transition-all duration-500",
-                  isActive ? "text-orange-500 scale-110" : "text-white/40 group-hover:text-white/80"
+                  isActive ? "text-white" : "text-white/40 group-hover:text-white/80"
                 )} />
 
                 {/* Expanding Vertical Text (Desktop only) */}
