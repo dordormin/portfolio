@@ -3,6 +3,8 @@ import { Cloud, Sun, CloudRain, CloudSnow, CloudLightning, CalendarDays } from '
 import { motion, AnimatePresence } from 'motion/react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { translations } from '@/data';
+import { Logo } from './Logo';
+import { Magnetic } from './Magnetic';
 
 export function OSWidget() {
   const { language } = useLanguage();
@@ -92,57 +94,69 @@ export function OSWidget() {
       initial={{ opacity: 0, y: 20, filter: 'blur(10px)' }}
       animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
       transition={{ duration: 1, ease: 'easeOut', delay: 0.5 }}
-      className="flex flex-col gap-3 sm:gap-4 p-4 sm:p-5 md:p-6 rounded-2xl sm:rounded-3xl bg-background border border-border shadow-2xl shadow-black/80 overflow-hidden relative w-full"
+      className="flex flex-col gap-4 sm:gap-6 p-6 sm:p-8 rounded-[2rem] bg-black/40 backdrop-blur-2xl border border-white/10 shadow-2xl shadow-black/80 overflow-hidden relative w-full"
     >
-      {/* Header: Date & Time */}
-      <div className="flex items-center justify-between border-b border-white/10 pb-3 sm:pb-4">
+      {/* Top Row: Volume & Logo (Console Style Right-Aligned priority) */}
+      <div className="flex items-start justify-between border-b border-white/10 pb-4 sm:pb-6">
+        
+        {/* Date & Time (Left) */}
         <div className="flex flex-col">
-          <span className="text-white/50 text-[10px] sm:text-xs font-mono uppercase tracking-wider mb-1 flex items-center gap-1">
-            <CalendarDays size={12} className="sm:w-[14px] sm:h-[14px]" />
-            {time.toLocaleDateString(locale, { weekday: 'short', month: 'short', day: 'numeric' })}
+          <span className="text-white/50 text-[10px] sm:text-xs font-mono uppercase tracking-[0.2em] mb-1 flex items-center gap-2">
+            <CalendarDays size={14} />
+            {time.toLocaleDateString(locale, { weekday: 'long', month: 'long', day: 'numeric' })}
           </span>
-          <span className="text-3xl sm:text-4xl md:text-5xl font-light text-white flex items-center gap-1 sm:gap-2">
+          <span className="text-4xl sm:text-5xl md:text-6xl font-light text-white tracking-tighter flex items-end gap-2">
             {time.toLocaleTimeString(locale, { hour: '2-digit', minute: '2-digit', hour12: false })}
-            <span className="text-white/20 text-xs sm:text-sm md:text-base animate-pulse mt-1 sm:mt-2">: {time.getSeconds().toString().padStart(2, '0')}</span>
+            <span className="text-white/20 text-sm md:text-xl font-medium animate-pulse mb-1 md:mb-2">
+              : {time.getSeconds().toString().padStart(2, '0')}
+            </span>
           </span>
+        </div>
+
+        {/* Logo (Right) */}
+        <div className="flex flex-col items-end gap-4">
+          <div className="hidden sm:block opacity-80 mt-2">
+            <Logo className="w-12 h-12 text-white" />
+          </div>
         </div>
       </div>
 
-      {/* Body: Weather */}
-      <div className="flex items-center justify-between pt-1 sm:pt-2">
+      {/* Body: Weather & CPU */}
+      <div className="flex items-center justify-between pt-2">
         <div className="flex flex-col">
-          <span className="text-white/50 text-[10px] sm:text-xs font-mono uppercase tracking-wider mb-1">{t.localEnv}</span>
-          <div className="flex items-end gap-2">
-            <span className="text-2xl sm:text-3xl md:text-4xl font-medium text-white">{weather.temp}</span>
-            <span className="text-white/60 text-xs sm:text-sm md:text-base mb-0.5 sm:mb-1">{weatherDesc}</span>
+          <span className="text-white/50 text-[10px] sm:text-xs font-mono uppercase tracking-[0.2em] mb-2">{t.localEnv}</span>
+          <div className="flex items-center gap-3 sm:gap-4">
+            <div className="relative w-12 h-12 sm:w-14 sm:h-14 flex items-center justify-center bg-white/5 rounded-2xl border border-white/10 shrink-0 shadow-inner">
+              <AnimatePresence mode="wait">
+                <motion.div
+                  key={weather.id}
+                  initial={{ scale: 0.5, opacity: 0, rotate: -45 }}
+                  animate={{ scale: 1, opacity: 1, rotate: 0 }}
+                  exit={{ scale: 0.5, opacity: 0, rotate: 45 }}
+                  transition={{ type: "spring", stiffness: 200, damping: 20 }}
+                >
+                  <WeatherIcon size={28} className={weather.color} />
+                </motion.div>
+              </AnimatePresence>
+            </div>
+            <div className="flex flex-col">
+              <span className="text-2xl sm:text-3xl font-medium text-white tracking-tight">{weather.temp}</span>
+              <span className="text-orange-500/80 text-xs sm:text-sm font-medium tracking-wide">{weatherDesc}</span>
+            </div>
           </div>
-        </div>
-        
-        <div className="relative w-12 h-12 sm:w-16 sm:h-16 flex items-center justify-center bg-surface rounded-xl sm:rounded-2xl border border-border shrink-0">
-          <AnimatePresence mode="wait">
-            <motion.div
-              key={weather.id}
-              initial={{ scale: 0.5, opacity: 0, rotate: -45 }}
-              animate={{ scale: 1, opacity: 1, rotate: 0 }}
-              exit={{ scale: 0.5, opacity: 0, rotate: 45 }}
-              transition={{ type: "spring", stiffness: 200, damping: 20 }}
-            >
-              <WeatherIcon size={24} className={`${weather.color} sm:w-8 sm:h-8`} />
-            </motion.div>
-          </AnimatePresence>
         </div>
       </div>
       
       {/* Footer: CPU / Status mockup */}
-      <div className="mt-1 sm:mt-2 pt-3 sm:pt-4 border-t border-white/10 flex items-center gap-2 sm:gap-3">
-        <div className="flex-1 h-1 bg-white/10 rounded-full overflow-hidden">
+      <div className="mt-2 pt-4 border-t border-white/10 flex items-center gap-3">
+        <div className="flex-1 h-[2px] bg-white/10 rounded-full overflow-hidden relative">
           <motion.div 
-            className="h-full bg-orange-500 rounded-full"
-            animate={{ width: ["30%", "70%", "40%", "80%", "30%"] }}
-            transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
+            className="absolute top-0 bottom-0 left-0 bg-gradient-to-r from-orange-600 to-orange-400 rounded-full"
+            animate={{ width: ["30%", "85%", "40%", "90%", "30%"] }}
+            transition={{ duration: 15, repeat: Infinity, ease: "easeInOut" }}
           />
         </div>
-        <span className="text-[9px] sm:text-[10px] text-white/40 font-mono shrink-0">{t.sysOk}</span>
+        <span className="text-[10px] text-white/40 font-mono tracking-[0.2em] shrink-0 uppercase">{t.sysOk}</span>
       </div>
     </motion.div>
   );
