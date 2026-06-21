@@ -213,8 +213,8 @@ function ShaderBlob() {
     }
     
     // Modulate WebGL ambient sound based on the scroll progress and time
-    // Higher pitch when scrolling down
-    const targetFreq = 55 + (scrollProgress * 40) + Math.sin(time) * 5;
+    // Shift from 198 Hz (G3) to 264 Hz (C4) for a pleasant harmonic journey
+    const targetFreq = 198 + (scrollProgress * 66) + Math.sin(time) * 2;
     synthAudio.setAmbientFrequency(targetFreq);
   });
 
