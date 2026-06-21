@@ -24,6 +24,20 @@ export const translations = {
       { title: "Become a Software Architect", issuer: "LinkedIn Learning", date: "December 2022" },
       { title: "Web & App Development Certification", issuer: "Acerfi Cameroun", date: "2016" }
     ],
+    education: [
+      {
+        degree: "Bachelor's in Computer Science",
+        institution: "Université de Sherbrooke",
+        location: "Sherbrooke, QC, Canada",
+        period: "2018 - 2022",
+        logo: "https://upload.wikimedia.org/wikipedia/fr/b/b2/Logo_de_l%27Universit%C3%A9_de_Sherbrooke.svg",
+        highlights: [
+          "Specialized concentration in Full Stack Web and Software Development.",
+          "Completed multiple corporate co-ops, integrating academic theory with hands-on enterprise software engineering.",
+          "Developed various applications, web platforms, and software solutions as part of academic and extracurricular projects."
+        ]
+      }
+    ],
     experience: [
       {
         role: "Full Stack Developer",
@@ -184,6 +198,10 @@ export const translations = {
       }
     ],
     ui: {
+      projects: "Projects",
+      contact: "Contact",
+      education: "Education",
+      viewProject: "View Project",
       viewWork: "View Work",
       contactMe: "Contact Me",
       downloadCv: "Download CV",
@@ -239,6 +257,20 @@ export const translations = {
       { title: "AWS Cloud Practitioner", issuer: "AWS", date: "En cours" },
       { title: "Devenir Architecte Logiciel", issuer: "LinkedIn Learning", date: "Décembre 2022" },
       { title: "Formation Développement Web & App", issuer: "Acerfi Cameroun", date: "2016" }
+    ],
+    education: [
+      {
+        degree: "Baccalauréat en Informatique",
+        institution: "Université de Sherbrooke",
+        location: "Sherbrooke, QC, Canada",
+        period: "2018 - 2022",
+        logo: "https://upload.wikimedia.org/wikipedia/fr/b/b2/Logo_de_l%27Universit%C3%A9_de_Sherbrooke.svg",
+        highlights: [
+          "Concentration en développement web et logiciel (Full Stack).",
+          "Réalisation de plusieurs stages coopératifs en entreprise, fusionnant théorie académique et ingénierie logicielle en milieu corporatif.",
+          "Développement de multiples projets (applications, plateformes web, logiciels) tout au long du cursus."
+        ]
+      }
     ],
     experience: [
       {

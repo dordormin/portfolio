@@ -16,6 +16,7 @@ export function Navbar({ viewMode, setViewMode }: NavbarProps) {
   const navItems = [
     { name: language === "en" ? "Home" : "Accueil", href: "#hero" },
     { name: language === "en" ? "About" : "À propos", href: "#about" },
+    { name: language === "en" ? "Education" : "Formation", href: "#education" },
     { name: language === "en" ? "Experience" : "Expérience", href: "#experience" },
     { name: language === "en" ? "Projects" : "Projets", href: "#projects" },
   ];

@@ -5,6 +5,7 @@ import { Hero } from './components/sections/Hero';
 import { About } from './components/sections/About';
 import { Certifications } from './components/sections/Certifications';
 import { Experience } from './components/sections/Experience';
+import { Education } from './components/sections/Education';
 import { Projects } from './components/sections/Projects';
 import { Contact } from './components/sections/Contact';
 import { BlogSection } from './components/sections/BlogSection';
@@ -37,6 +38,7 @@ export default function App() {
         <main className="flex-1 relative z-10 w-full max-w-full md:ml-20 lg:ml-24 pt-[72px] md:pt-0">
           <Hero />
           <About />
+          <Education />
           <Experience />
           <Certifications />
           <Projects />
