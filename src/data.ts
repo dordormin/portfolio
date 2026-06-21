@@ -108,7 +108,8 @@ export const translations = {
         period: "2017 - 2018",
         responsibilities: [
           "Initiated early career in tech by contributing to the complete web redesign for a prominent local internet service provider.",
-          "Translated complex UI/UX wireframes from Adobe Photoshop into highly responsive, semantic HTML and CSS layouts.",
+          "Translated UI/UX wireframes from Adobe Photoshop into responsive layouts using HTML, CSS, Bootstrap, and JavaScript.",
+          "Developed and maintained dynamic server-side functionalities utilizing PHP and WAMP architecture."
         ],
         achievements: [
           "Successfully modernized the company's digital presence, establishing a strong foundational mastery of fundamental web programming."
@@ -294,7 +295,8 @@ export const translations = {
         period: "2017 - 2018",
         responsibilities: [
           "Initié mon parcours technologique en participant à la refonte web complète pour un fournisseur local majeur de services internet.",
-          "Converti des maquettes UI/UX complexes créées sur Adobe Photoshop en interfaces web responsives et sémantiques (HTML/CSS).",
+          "Converti des maquettes UI/UX complexes (Photoshop) en interfaces responsives avec HTML, CSS, Bootstrap et JavaScript.",
+          "Développé des fonctionnalités dynamiques côté serveur en s'appuyant sur l'architecture PHP et WAMP."
         ],
         achievements: [
           "Modernisé avec succès l'empreinte numérique de l'entreprise, forgeant ainsi une maîtrise absolue des fondamentaux du web."
