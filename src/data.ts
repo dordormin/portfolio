@@ -22,7 +22,7 @@ export const translations = {
       { title: "Microsoft Certified: Azure Developer Associate", issuer: "Microsoft", date: "Ongoing" },
       { title: "AWS Cloud Practitioner", issuer: "AWS", date: "Ongoing" },
       { title: "Become a Software Architect", issuer: "LinkedIn Learning", date: "December 2022" },
-      { title: "Web Programming & Design Certification", issuer: "Acerfi Cameroun", date: "2016" }
+      { title: "Web & App Development Certification", issuer: "Acerfi Cameroun", date: "2016" }
     ],
     experience: [
       {
@@ -208,7 +208,7 @@ export const translations = {
       { title: "Microsoft Certified: Azure Developer Associate", issuer: "Microsoft", date: "En cours" },
       { title: "AWS Cloud Practitioner", issuer: "AWS", date: "En cours" },
       { title: "Devenir Architecte Logiciel", issuer: "LinkedIn Learning", date: "Décembre 2022" },
-      { title: "Formation Programmation Web & Design", issuer: "Acerfi Cameroun", date: "2016" }
+      { title: "Formation Développement Web & App", issuer: "Acerfi Cameroun", date: "2016" }
     ],
     experience: [
       {
