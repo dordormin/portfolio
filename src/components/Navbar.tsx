@@ -73,15 +73,6 @@ export function Navbar({ viewMode, setViewMode }: NavbarProps) {
               {language}
             </button>
           </Magnetic>
-          <Magnetic>
-            <button
-              onClick={toggleMute}
-              className="p-1.5 md:p-2 border border-white/20 rounded-full hover:bg-white/20 hover:text-orange-400 transition-colors shrink-0"
-              title={isMuted ? "Activer le son" : "Désactiver le son"}
-            >
-              {isMuted ? <VolumeX className="w-3.5 h-3.5 md:w-4 md:h-4 text-white/60" /> : <Volume2 className="w-3.5 h-3.5 md:w-4 md:h-4 text-white/90" />}
-            </button>
-          </Magnetic>
         </div>
       </div>
 
@@ -193,6 +184,19 @@ export function Navbar({ viewMode, setViewMode }: NavbarProps) {
       </div>
       <div className="hidden md:flex flex-col gap-4 text-white/40 items-center justify-end shrink-0 pb-6">
         <span className="text-[10px] [writing-mode:vertical-rl] rotate-180 tracking-widest">© 2026</span>
+      </div>
+
+      {/* Floating Sound Toggle - Top Right */}
+      <div className="fixed top-4 right-4 md:top-6 md:right-8 z-50">
+        <Magnetic intensity={0.2}>
+          <button
+            onClick={toggleMute}
+            className="p-2 md:p-3 bg-black/40 backdrop-blur-xl border border-white/20 rounded-full hover:bg-white/20 hover:text-orange-400 transition-colors"
+            title={isMuted ? "Activer le son" : "Désactiver le son"}
+          >
+            {isMuted ? <VolumeX className="w-4 h-4 md:w-5 md:h-5 text-white/60" /> : <Volume2 className="w-4 h-4 md:w-5 md:h-5 text-white/90" />}
+          </button>
+        </Magnetic>
       </div>
     </nav>
   );
