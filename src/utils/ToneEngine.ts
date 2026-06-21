@@ -14,12 +14,26 @@ class ToneEngine {
   private eq: Tone.EQ3 | null = null;
   private compressor: Tone.Compressor | null = null;
 
-  // Music Logic
+  // 3-Minute Cycle (180 seconds at 40 BPM)
+  // 40 BPM = 1.5s per beat = 6s per measure.
+  // 1 chord every 2 measures = 12s per chord.
+  // 15 chords * 12s = 180s = 3 minutes.
   private chords = [
     ['D3', 'F3', 'A3', 'C4'], // D minor 7
     ['A2', 'C3', 'E3', 'G3'], // A minor 7
     ['C3', 'E3', 'G3', 'B3'], // C major 7
+    ['F2', 'A2', 'C3', 'E3'], // F major 7
+    ['B2', 'D3', 'F3', 'A3'], // B half-diminished
+    ['E2', 'G#2', 'B2', 'D3'], // E dominant 7
+    ['A2', 'C3', 'E3', 'G3'], // A minor 7
     ['G2', 'B2', 'D3', 'F3'], // G dominant 7
+    ['C3', 'E3', 'G3', 'B3'], // C major 7
+    ['A2', 'C#3', 'E3', 'G3'], // A dominant 7
+    ['D3', 'F3', 'A3', 'C4'], // D minor 7
+    ['G2', 'B2', 'D3', 'F3'], // G dominant 7
+    ['E2', 'G2', 'B2', 'D3'], // E minor 7
+    ['F2', 'A2', 'C3', 'E3'], // F major 7
+    ['A2', 'C#3', 'E3', 'A3'], // A major (Picardy third climax before loop)
   ];
   private chordIndex = 0;
   private loop: Tone.Loop | null = null;
