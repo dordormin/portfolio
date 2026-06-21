@@ -2,13 +2,14 @@ import React, { useState, Suspense, lazy } from 'react';
 const BackgroundCanvas = lazy(() => import('./components/canvas/BackgroundCanvas').then(module => ({ default: module.BackgroundCanvas })));
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/sections/Hero';
-import { About } from './components/sections/About';
-import { Certifications } from './components/sections/Certifications';
-import { Experience } from './components/sections/Experience';
-import { Education } from './components/sections/Education';
-import { Projects } from './components/sections/Projects';
-import { Contact } from './components/sections/Contact';
-import { BlogSection } from './components/sections/BlogSection';
+
+const About = lazy(() => import('./components/sections/About').then(module => ({ default: module.About })));
+const Certifications = lazy(() => import('./components/sections/Certifications').then(module => ({ default: module.Certifications })));
+const Experience = lazy(() => import('./components/sections/Experience').then(module => ({ default: module.Experience })));
+const Education = lazy(() => import('./components/sections/Education').then(module => ({ default: module.Education })));
+const Projects = lazy(() => import('./components/sections/Projects').then(module => ({ default: module.Projects })));
+const Contact = lazy(() => import('./components/sections/Contact').then(module => ({ default: module.Contact })));
+const BlogSection = lazy(() => import('./components/sections/BlogSection').then(module => ({ default: module.BlogSection })));
 import { ScrollProgress } from './components/ui/ScrollProgress';
 import { Loader } from './components/ui/Loader';
 import { SmoothScroll } from './components/ui/SmoothScroll';
@@ -41,16 +42,20 @@ export default function App() {
       {viewMode === 'portfolio' ? (
         <main className="flex-1 relative z-10 w-full max-w-full md:ml-20 lg:ml-24 pt-[72px] md:pt-0">
           <Hero />
-          <About />
-          <Education />
-          <Experience />
-          <Certifications />
-          <Projects />
-          <Contact />
+          <Suspense fallback={<div className="h-screen"></div>}>
+            <About />
+            <Education />
+            <Experience />
+            <Certifications />
+            <Projects />
+            <Contact />
+          </Suspense>
         </main>
       ) : (
         <main className="flex-1 relative z-10 w-full max-w-full md:ml-20 lg:ml-24 pt-[72px] md:pt-0">
-          <BlogSection />
+          <Suspense fallback={<div className="h-screen"></div>}>
+            <BlogSection />
+          </Suspense>
         </main>
       )}
     </div>
