@@ -1,6 +1,6 @@
 import { useRef, useMemo, useEffect, useState } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
-import { Points, PointMaterial, Icosahedron } from "@react-three/drei";
+import { Points, PointMaterial, Icosahedron, PerformanceMonitor } from "@react-three/drei";
 import {
   EffectComposer,
   Bloom,
@@ -22,7 +22,7 @@ if (typeof window !== "undefined") {
   });
 }
 
-function ShaderBlob() {
+function ShaderBlob({ isMobile }: { isMobile?: boolean }) {
   const meshRef = useRef<THREE.Mesh>(null);
   const materialRef = useRef<THREE.ShaderMaterial>(null);
 
@@ -217,7 +217,7 @@ function ShaderBlob() {
   });
 
   return (
-    <Icosahedron ref={meshRef} args={[4, 32]} position={[0, -2, -8]}>
+    <Icosahedron ref={meshRef} args={[4, isMobile ? 16 : 32]} position={[0, -2, -8]}>
       <shaderMaterial
         ref={materialRef}
         vertexShader={vertexShader}
@@ -297,10 +297,16 @@ function ParticleCloud({ isMobile }: { isMobile: boolean }) {
 
 export function BackgroundCanvas({ viewMode }: { viewMode: 'portfolio' | 'blog' }) {
   const [isMobile, setIsMobile] = useState(false);
+  const [dpr, setDpr] = useState(1.5);
+  const [disableEffects, setDisableEffects] = useState(false);
   const { isMuted } = useSoundContext();
 
   useEffect(() => {
-    const checkMobile = () => setIsMobile(window.innerWidth < 768);
+    const checkMobile = () => {
+      const mobile = window.innerWidth < 768;
+      setIsMobile(mobile);
+      if (mobile) setDpr(1); // Set base DPR for mobile
+    };
     checkMobile();
     window.addEventListener("resize", checkMobile);
     return () => window.removeEventListener("resize", checkMobile);
@@ -312,14 +318,18 @@ export function BackgroundCanvas({ viewMode }: { viewMode: 'portfolio' | 'blog' 
     <div className="fixed inset-0 z-0 pointer-events-none opacity-60 mix-blend-screen">
       <Canvas 
         camera={{ position: [0, 0, 10] }} 
-        dpr={isMobile ? [1, 1] : [1, 1.5]} 
+        dpr={dpr} 
         gl={{ powerPreference: "high-performance", antialias: false, stencil: false, depth: false }}
       >
+        <PerformanceMonitor 
+          onDecline={() => { setDpr(0.5); setDisableEffects(true); }}
+          onIncline={() => { setDpr(isMobile ? 1 : 1.5); setDisableEffects(false); }}
+        />
         <ParticleCloud isMobile={isMobile} />
-        {viewMode === 'portfolio' && <ShaderBlob />}
+        {viewMode === 'portfolio' && <ShaderBlob isMobile={isMobile} />}
         {viewMode === 'blog' && <BlogJourney3D isMobile={isMobile} />}
 
-        {!isMobile && (
+        {!isMobile && !disableEffects && (
           <EffectComposer>
             <Bloom
               luminanceThreshold={0.2}
