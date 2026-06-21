@@ -361,10 +361,11 @@ export const translations = {
         ],
       },
       {
-        role: "Stagiaire Développeur Web & Designer",
-        company: "Creolink Communications",
+        role: "Développeur Web & Designer Stagiaire",
+        company: "CREOLINK Communications",
         location: "Yaoundé, Cameroun",
         period: "2017 - 2018",
+        logo: "https://static2.ikwen.com/econnect/img/creolink_logo_portrait.png",
         responsibilities: [
           "Initié mon parcours technologique en participant à la refonte web complète pour un fournisseur local majeur de services internet.",
           "Converti des maquettes UI/UX complexes (Photoshop) en interfaces responsives avec HTML, CSS, Bootstrap et JavaScript.",
