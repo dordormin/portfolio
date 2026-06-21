@@ -3,6 +3,7 @@ import { translations } from "@/data";
 import gsap from "gsap";
 import { motion } from "motion/react";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { useSoundContext } from "@/contexts/SoundContext";
 import { handleDownloadCV } from "@/utils/downloadCv";
 import { Magnetic } from "../ui/Magnetic";
 import { TextScramble } from "../ui/TextScramble";
@@ -11,6 +12,7 @@ import { OSWidget } from "../ui/OSWidget";
 export function Hero() {
   const textRef = useRef<HTMLDivElement>(null);
   const { language } = useLanguage();
+  const { playHover, playClick } = useSoundContext();
   const t = translations[language];
 
   useEffect(() => {
@@ -41,19 +43,20 @@ export function Hero() {
           
           <div className="flex flex-wrap gap-4 sm:gap-6 items-center">
             <Magnetic intensity={0.1}>
-              <a href="#projects" className="px-6 sm:px-8 py-3 sm:py-4 bg-white text-black text-xs sm:text-sm uppercase tracking-wider font-semibold rounded-full hover:bg-zinc-200 transition-colors whitespace-nowrap">
+              <a href="#projects" onMouseEnter={playHover} onClick={playClick} className="px-6 sm:px-8 py-3 sm:py-4 bg-white text-black text-xs sm:text-sm uppercase tracking-wider font-semibold rounded-full hover:bg-zinc-200 transition-colors whitespace-nowrap">
                 {t.ui.viewWork}
               </a>
             </Magnetic>
             <Magnetic intensity={0.1}>
-              <a href="#contact" className="px-6 sm:px-8 py-3 sm:py-4 bg-white/5 text-white border border-white/20 text-xs sm:text-sm uppercase tracking-wider font-semibold rounded-full hover:bg-white/10 transition-colors whitespace-nowrap">
+              <a href="#contact" onMouseEnter={playHover} onClick={playClick} className="px-6 sm:px-8 py-3 sm:py-4 bg-white/5 text-white border border-white/20 text-xs sm:text-sm uppercase tracking-wider font-semibold rounded-full hover:bg-white/10 transition-colors whitespace-nowrap">
                 {t.ui.contactMe}
               </a>
             </Magnetic>
             <Magnetic intensity={0.1}>
               <motion.a 
                 href="#"
-                onClick={(e) => handleDownloadCV(language, e)}
+                onMouseEnter={playHover}
+                onClick={(e) => { playClick(); handleDownloadCV(language, e); }}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 className="flex items-center gap-2 sm:gap-3 px-6 sm:px-8 py-3 sm:py-4 bg-orange-600 text-white text-xs sm:text-sm uppercase tracking-wider font-semibold rounded-full hover:bg-orange-500 transition-colors shadow-lg shadow-orange-900/20 whitespace-nowrap"

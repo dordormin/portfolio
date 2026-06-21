@@ -1,15 +1,13 @@
 import React, { useState, useEffect } from 'react';
-import { Cloud, Sun, CloudRain, CloudSnow, CloudLightning, CalendarDays, Volume2, VolumeX } from 'lucide-react';
+import { Cloud, Sun, CloudRain, CloudSnow, CloudLightning, CalendarDays } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 import { useLanguage } from '@/contexts/LanguageContext';
-import { useSoundContext } from '@/contexts/SoundContext';
 import { translations } from '@/data';
 import { Logo } from './Logo';
 import { Magnetic } from './Magnetic';
 
 export function OSWidget() {
   const { language } = useLanguage();
-  const { isMuted, toggleMute } = useSoundContext();
   const t = translations[language].ui.osWidget;
   const locale = language === 'fr' ? 'fr-FR' : 'en-US';
 
@@ -115,18 +113,8 @@ export function OSWidget() {
           </span>
         </div>
 
-        {/* Volume & Logo (Right) */}
+        {/* Logo (Right) */}
         <div className="flex flex-col items-end gap-4">
-          <Magnetic intensity={0.2}>
-            <button
-              onClick={toggleMute}
-              className="p-3 bg-white/5 hover:bg-white/10 border border-white/10 rounded-full text-white/80 hover:text-orange-400 transition-colors"
-              title={isMuted ? "Activer le son" : "Désactiver le son"}
-            >
-              {isMuted ? <VolumeX size={20} /> : <Volume2 size={20} />}
-            </button>
-          </Magnetic>
-          
           <div className="hidden sm:block opacity-80 mt-2">
             <Logo className="w-12 h-12 text-white" />
           </div>

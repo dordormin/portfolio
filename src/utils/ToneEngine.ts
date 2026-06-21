@@ -73,8 +73,8 @@ class ToneEngine {
       envelope: {
         attack: 4,
         decay: 2,
-        sustian: 0.8,
-        release: 6
+        sustain: 0.8,
+        release: 8 // Long release for seamless transitions without distinctive cuts
       },
       volume: -20
     });
