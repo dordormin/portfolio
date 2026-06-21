@@ -444,6 +444,10 @@ export const translations = {
       }
     ],
     ui: {
+      projects: "Projets",
+      contact: "Contact",
+      education: "Parcours",
+      viewProject: "Voir le projet",
       viewWork: "Voir les projets",
       contactMe: "Me contacter",
       downloadCv: "Télécharger le CV",
