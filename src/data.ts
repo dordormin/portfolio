@@ -19,9 +19,9 @@ export const translations = {
     certifications: [
       { title: "Machine Learning Specialization", issuer: "Stanford / DeepLearning.AI", date: "April 2023" },
       { title: "Deep Learning Specialization", issuer: "DeepLearning.AI", date: "Ongoing" },
-      { title: "Microsoft Certified: Azure Developer Associate", issuer: "Microsoft", date: "Ongoing" },
-      { title: "AWS Cloud Practitioner", issuer: "AWS", date: "Ongoing" },
-      { title: "Become a Software Architect", issuer: "LinkedIn Learning", date: "December 2022" },
+      { title: "Microsoft Certified: Azure Developer Associate", issuer: "Microsoft", date: "Ongoing", logo: "https://upload.wikimedia.org/wikipedia/commons/9/96/Microsoft_logo_%282012%29.svg" },
+      { title: "AWS Cloud Practitioner", issuer: "AWS", date: "Ongoing", logo: "https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg" },
+      { title: "Become a Software Architect", issuer: "LinkedIn Learning", date: "December 2022", logo: "https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png" },
       { title: "Web & App Development Certification", issuer: "Acerfi Cameroun", date: "2016" }
     ],
     education: [
@@ -75,6 +75,7 @@ export const translations = {
         company: "Université de Sherbrooke",
         location: "Sherbrooke, QC, Canada",
         period: "January 2022 - May 2022",
+        logo: "https://yt3.googleusercontent.com/7Cl2wU6IMbRdrOw-BmVgJw8lNpXtcdg4QEYDhC21WPHisOCkIuhN6rahTxCR_1ytUpnM-o9Y=s900-c-k-c0x00ffffff-no-rj",
         responsibilities: [
           "Designed and developed a custom SQL parser and linter evaluating complex queries for over 250 students, reducing manual grading time by 60%.",
           "Created automated data pipelines and verification tools (Python, SQL) that processed thousands of queries, ensuring 100% accuracy in performance benchmarking.",
@@ -90,6 +91,7 @@ export const translations = {
         company: "Olympus NDT Canada",
         location: "Quebec, QC, Canada",
         period: "May 2021 - August 2021",
+        logo: "https://upload.wikimedia.org/wikipedia/commons/4/4c/Olympus_Corporation_logo.svg",
         responsibilities: [
           "Engineered dynamic web applications utilizing C#, ASP.NET MVC, and Angular 6 within an agile, multidisciplinary team.",
           "Actively participated in the full software development lifecycle, from gathering initial requirements to executing production deployments.",
@@ -104,7 +106,8 @@ export const translations = {
         role: "Software Developer | QA Engineer, Coop",
         company: "SAP Labs Canada",
         location: "Montreal, QC, Canada",
-        period: "January 2020 - April 2020",
+        period: "September 2022 - December 2022",
+        logo: "https://upload.wikimedia.org/wikipedia/commons/5/59/SAP_2011_logo.svg",
         responsibilities: [
           "Developed high-quality software solutions utilizing rigorous Test-Driven Development (TDD) methodologies.",
           "Authored comprehensive unit tests using QUnit and OPA5, and conducted API integration testing with Postman, ensuring robust application stability.",
@@ -253,9 +256,9 @@ export const translations = {
     certifications: [
       { title: "Spécialisation Machine Learning", issuer: "Stanford / DeepLearning.AI", date: "Avril 2023" },
       { title: "Spécialisation Deep Learning", issuer: "DeepLearning.AI", date: "En cours" },
-      { title: "Microsoft Certified: Azure Developer Associate", issuer: "Microsoft", date: "En cours" },
-      { title: "AWS Cloud Practitioner", issuer: "AWS", date: "En cours" },
-      { title: "Devenir Architecte Logiciel", issuer: "LinkedIn Learning", date: "Décembre 2022" },
+      { title: "Microsoft Certified: Azure Developer Associate", issuer: "Microsoft", date: "En cours", logo: "https://upload.wikimedia.org/wikipedia/commons/9/96/Microsoft_logo_%282012%29.svg" },
+      { title: "AWS Cloud Practitioner", issuer: "AWS", date: "En cours", logo: "https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg" },
+      { title: "Devenir Architecte Logiciel", issuer: "LinkedIn Learning", date: "Décembre 2022", logo: "https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png" },
       { title: "Formation Développement Web & App", issuer: "Acerfi Cameroun", date: "2016" }
     ],
     education: [
@@ -309,6 +312,7 @@ export const translations = {
         company: "Université de Sherbrooke",
         location: "Sherbrooke, QC, Canada",
         period: "Janvier 2022 - Mai 2022",
+        logo: "https://yt3.googleusercontent.com/7Cl2wU6IMbRdrOw-BmVgJw8lNpXtcdg4QEYDhC21WPHisOCkIuhN6rahTxCR_1ytUpnM-o9Y=s900-c-k-c0x00ffffff-no-rj",
         responsibilities: [
           "Conçu et développé un parseur et linter SQL personnalisé évaluant les requêtes de plus de 250 étudiants, réduisant le temps de correction manuel de 60%.",
           "Créé des pipelines de données automatisés (Python, SQL) traitant des milliers de requêtes pour garantir une précision de 100% lors des évaluations de performance.",
@@ -324,6 +328,7 @@ export const translations = {
         company: "Olympus NDT Canada",
         location: "Québec, QC, Canada",
         period: "Mai 2021 - Août 2021",
+        logo: "https://upload.wikimedia.org/wikipedia/commons/4/4c/Olympus_Corporation_logo.svg",
         responsibilities: [
           "Conçu des applications dynamiques avec C#, ASP.NET MVC et Angular 6 au sein d'une équipe agile et pluridisciplinaire.",
           "Participé au cycle complet de développement logiciel, de l'analyse des besoins aux déploiements en production.",
@@ -338,7 +343,8 @@ export const translations = {
         role: "Développeur Logiciel | Ingénieur QA, Coop",
         company: "SAP Labs Canada",
         location: "Montréal, QC, Canada",
-        period: "Janvier 2020 - Avril 2020",
+        period: "Septembre 2022 - Décembre 2022",
+        logo: "https://upload.wikimedia.org/wikipedia/commons/5/59/SAP_2011_logo.svg",
         responsibilities: [
           "Développé des solutions logicielles en utilisant la méthodologie rigoureuse de Test-Driven Development (TDD).",
           "Conçu des tests unitaires complets avec QUnit et OPA5, et réalisé des tests d'intégration d'API avec Postman, assurant la stabilité de l'application.",

@@ -33,6 +33,11 @@ export function Experience() {
                     <SectionRow.Title className="text-3xl md:text-4xl lg:text-5xl">{exp.company}</SectionRow.Title>
                     <SectionRow.Subtitle>{exp.location}</SectionRow.Subtitle>
                   </div>
+                  {exp.logo && (
+                    <div className="mt-4 w-24 h-24 rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10 p-3 flex items-center justify-center">
+                      <img src={exp.logo} alt={exp.company} className="max-w-full max-h-full object-contain" />
+                    </div>
+                  )}
                 </SectionRow.Left>
                 
                 <SectionRow.Right>

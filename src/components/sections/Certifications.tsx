@@ -21,7 +21,12 @@ export function Certifications() {
           items={t.certifications}
           renderItem={(cert) => (
             <SectionRow className="py-8 md:py-12 items-center">
-              <SectionRow.Left className="w-full md:w-3/4 flex-row justify-between items-center">
+              <SectionRow.Left className="w-full md:w-3/4 flex-row justify-start items-center gap-6">
+                {cert.logo && (
+                  <div className="w-16 h-16 md:w-20 md:h-20 shrink-0 rounded-xl bg-white/5 backdrop-blur-sm border border-white/10 p-3 flex items-center justify-center">
+                    <img src={cert.logo} alt={cert.issuer} className="max-w-full max-h-full object-contain" />
+                  </div>
+                )}
                 <div className="flex flex-col">
                   <SectionRow.Title className="text-2xl md:text-3xl lg:text-4xl mb-2">{cert.title}</SectionRow.Title>
                   <SectionRow.Subtitle className="mt-0">{cert.issuer}</SectionRow.Subtitle>
