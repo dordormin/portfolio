@@ -1,4 +1,4 @@
-import { useRef, useMemo, useEffect } from "react";
+import { useRef, useMemo, useEffect, useState } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { Points, PointMaterial, Icosahedron } from "@react-three/drei";
 import {
@@ -226,14 +226,14 @@ function ShaderBlob() {
   );
 }
 
-function ParticleCloud() {
+function ParticleCloud({ isMobile }: { isMobile: boolean }) {
   const ref = useRef<THREE.Points>(null);
 
   // Generate random points in a sphere
   const sphere = useMemo(() => {
     const minRadius = 2;
     const maxRadius = 15;
-    const particlesCount = 1000;
+    const particlesCount = isMobile ? 300 : 1000;
     const positions = new Float32Array(particlesCount * 3);
 
     for (let i = 0; i < particlesCount; i++) {
@@ -251,7 +251,7 @@ function ParticleCloud() {
       positions[i * 3 + 2] = z;
     }
     return positions;
-  }, []);
+  }, [isMobile]);
 
   useFrame((state, delta) => {
     if (ref.current) {
@@ -290,29 +290,40 @@ function ParticleCloud() {
 }
 
 export function BackgroundCanvas() {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth < 768);
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
+
   return (
     <div className="fixed inset-0 z-0 pointer-events-none opacity-60 mix-blend-screen">
       <Canvas 
         camera={{ position: [0, 0, 10] }} 
-        dpr={[1, 1.5]} 
+        dpr={isMobile ? [1, 1] : [1, 1.5]} 
         gl={{ powerPreference: "high-performance", antialias: false, stencil: false, depth: false }}
       >
-        <ParticleCloud />
+        <ParticleCloud isMobile={isMobile} />
         <ShaderBlob />
 
-        <EffectComposer>
-          <Bloom
-            luminanceThreshold={0.2}
-            luminanceSmoothing={0.9}
-            intensity={2.5}
-            mipmapBlur
-          />
-          <Noise opacity={0.03} />
-          <ChromaticAberration
-            blendFunction={BlendFunction.NORMAL}
-            offset={new THREE.Vector2(0.002, 0.002)}
-          />
-        </EffectComposer>
+        {!isMobile && (
+          <EffectComposer>
+            <Bloom
+              luminanceThreshold={0.2}
+              luminanceSmoothing={0.9}
+              intensity={2.5}
+              mipmapBlur
+            />
+            <Noise opacity={0.03} />
+            <ChromaticAberration
+              blendFunction={BlendFunction.NORMAL}
+              offset={new THREE.Vector2(0.002, 0.002)}
+            />
+          </EffectComposer>
+        )}
       </Canvas>
     </div>
   );
