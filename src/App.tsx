@@ -32,7 +32,7 @@ export default function App() {
       
       <Navbar viewMode={viewMode} setViewMode={setViewMode} />
       
-      <main className={`flex-1 relative z-10 w-full max-w-full transition-opacity duration-1000 ${viewMode === 'blog' ? 'opacity-0 pointer-events-none' : 'opacity-100'}`}>
+      <main className={`flex-1 relative z-10 w-full max-w-full transition-opacity duration-1000 md:ml-20 lg:ml-24 pt-[72px] md:pt-0 ${viewMode === 'blog' ? 'opacity-0 pointer-events-none' : 'opacity-100'}`}>
         <Hero />
         <About />
         <Experience />
