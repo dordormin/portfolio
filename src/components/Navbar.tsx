@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { cn } from "@/lib/utils";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { Magnetic } from "./ui/Magnetic";
+import { Logo } from "./ui/Logo";
 
 export function Navbar() {
   const [activeSegment, setActiveSegment] = useState("hero");
@@ -49,7 +50,9 @@ export function Navbar() {
     >
       <div className="flex flex-row md:flex-col items-center gap-6 sm:gap-8 shrink-0 pr-6 sm:pr-8 md:pr-0 md:w-full border-r border-border md:border-r-0 md:border-b py-4 md:py-0 px-6 sm:px-8 md:px-0 md:pb-4 lg:pb-6 self-stretch md:self-auto">
         <Magnetic intensity={0.2}>
-          <div className="text-xl sm:text-2xl md:text-xl lg:text-3xl font-bold tracking-tighter cursor-hover">DM</div>
+          <div className="cursor-hover group">
+            <Logo className="w-12 h-10 text-white/80 group-hover:text-primary transition-colors duration-500" />
+          </div>
         </Magnetic>
         <Magnetic>
           <button 

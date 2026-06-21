@@ -16,6 +16,7 @@ const skillToLogos: Record<string, LogoType[]> = {
   "C# & .NET": ["dotnet", Code2],
   "Python (FastAPI, Django)": ["python", "fastapi", "django"],
   "Java & Spring Boot": [Code2, "springboot"],
+  "Node.js": ["nodedotjs"],
   "PostgreSQL & SQLite": ["postgresql", "sqlite"],
   "MongoDB": ["mongodb"],
   
@@ -24,6 +25,11 @@ const skillToLogos: Record<string, LogoType[]> = {
   "JavaScript / TypeScript": ["javascript", "typescript"],
   "HTML5 & CSS3": ["html5", Layout],
 
+  "TensorFlow & PyTorch": ["tensorflow", "pytorch"],
+  "Scikit-Learn & Pandas": ["scikitlearn", "pandas"],
+  "Neural Networks": [Brain, Network],
+  "Réseaux de Neurones": [Brain, Network],
+  
   "LangChain & LangGraph": ["langchain"],
   "RAG Architectures": [Bot, Database],
   "Architectures RAG": [Bot, Database],
