@@ -16,6 +16,7 @@ export function BlogGallery({ isMobile }: { isMobile: boolean }) {
   
   const targetRotation = useRef(0);
   const isDragging = useRef(false);
+  const isHovered = useRef(false);
   const previousX = useRef(0);
 
   // Interaction handlers for spinning the gallery
@@ -39,7 +40,9 @@ export function BlogGallery({ isMobile }: { isMobile: boolean }) {
     
     const handleWheel = (e: WheelEvent) => {
       if (!activePost) {
-        targetRotation.current += e.deltaY * 0.002;
+        // Normalize wheel delta to prevent explosive spinning on trackpads
+        const normalizedDelta = Math.max(-50, Math.min(50, e.deltaY));
+        targetRotation.current += normalizedDelta * 0.005;
       }
     };
 
@@ -59,6 +62,11 @@ export function BlogGallery({ isMobile }: { isMobile: boolean }) {
   // Smooth rotation
   useFrame((state, delta) => {
     if (groupRef.current) {
+      // Auto-rotation when not interacting
+      if (!activePost && !isDragging.current && !isHovered.current) {
+        targetRotation.current += delta * 0.15;
+      }
+      
       // Lerp rotation towards target
       const currentRotation = groupRef.current.rotation.y;
       groupRef.current.rotation.y = THREE.MathUtils.damp(currentRotation, targetRotation.current, 4, delta);
@@ -96,6 +104,8 @@ export function BlogGallery({ isMobile }: { isMobile: boolean }) {
                       : 'bg-black/40 hover:bg-black/60 hover:border-primary/50'
                   }`}
                   onClick={() => !activePost && setActivePost(post.id)}
+                  onPointerEnter={() => isHovered.current = true}
+                  onPointerLeave={() => isHovered.current = false}
                 >
                   <div className="flex justify-between items-start mb-4">
                     <span className="text-primary font-mono text-xs uppercase tracking-widest">{post.date}</span>
