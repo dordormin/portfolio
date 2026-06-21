@@ -3,7 +3,9 @@ import { cn } from "@/lib/utils";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { Magnetic } from "./ui/Magnetic";
 import { Logo } from "./ui/Logo";
-import { Home, User, GraduationCap, Briefcase, FolderGit2, BookOpen } from "lucide-react";
+import { Home, User, GraduationCap, Briefcase, FolderGit2, BookOpen, Volume2, VolumeX } from "lucide-react";
+import { useSoundContext } from "@/contexts/SoundContext";
+import { synthAudio } from "@/utils/audio";
 
 interface NavbarProps {
   viewMode: 'portfolio' | 'blog';
@@ -13,6 +15,7 @@ interface NavbarProps {
 export function Navbar({ viewMode, setViewMode }: NavbarProps) {
   const [activeSegment, setActiveSegment] = useState("hero");
   const { language, setLanguage } = useLanguage();
+  const { isMuted, toggleMute } = useSoundContext();
 
   const navItems = [
     { name: language === "en" ? "Home" : "Accueil", href: "#hero", icon: Home },
@@ -42,6 +45,7 @@ export function Navbar({ viewMode, setViewMode }: NavbarProps) {
 
   const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
     e.preventDefault();
+    synthAudio.playClick(isMuted);
     const target = document.querySelector(href);
     if (target) {
       target.scrollIntoView({ behavior: "smooth" });
@@ -68,6 +72,15 @@ export function Navbar({ viewMode, setViewMode }: NavbarProps) {
             {language}
           </button>
         </Magnetic>
+        <Magnetic>
+          <button
+            onClick={toggleMute}
+            className="p-1.5 md:p-2 border border-white/20 rounded-full hover:bg-white/20 hover:text-orange-400 transition-colors shrink-0 ml-0 md:mt-4"
+            title={isMuted ? "Activer le son" : "Désactiver le son"}
+          >
+            {isMuted ? <VolumeX className="w-3.5 h-3.5 md:w-4 md:h-4 text-white/60" /> : <Volume2 className="w-3.5 h-3.5 md:w-4 md:h-4 text-white/90" />}
+          </button>
+        </Magnetic>
       </div>
 
       <div className="flex flex-row md:flex-col gap-6 sm:gap-8 md:gap-6 lg:gap-8 overflow-x-auto md:overflow-x-hidden md:overflow-y-auto [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none] items-center flex-1 min-w-0 md:min-h-0 justify-start md:w-full py-4 pl-6 sm:pl-8 md:pl-0 pr-6 sm:pr-8 md:pr-0">
@@ -83,6 +96,7 @@ export function Navbar({ viewMode, setViewMode }: NavbarProps) {
             <Magnetic key={item.href} intensity={0.3}>
               <a
                 href={item.href}
+                onMouseEnter={() => synthAudio.playHover(isMuted, -0.5)}
                 onClick={(e) => {
                   if (viewMode === 'blog') {
                     setViewMode('portfolio');
@@ -133,7 +147,11 @@ export function Navbar({ viewMode, setViewMode }: NavbarProps) {
         {/* Blog Button */}
         <Magnetic intensity={0.3}>
           <button
-            onClick={() => setViewMode(viewMode === 'blog' ? 'portfolio' : 'blog')}
+            onMouseEnter={() => synthAudio.playHover(isMuted, 0.5)}
+            onClick={() => {
+              synthAudio.playClick(isMuted);
+              setViewMode(viewMode === 'blog' ? 'portfolio' : 'blog');
+            }}
             className="group relative flex flex-row md:flex-col items-center justify-center gap-3 md:py-2 transition-all duration-500"
           >
             {/* Active Indicator Line */}

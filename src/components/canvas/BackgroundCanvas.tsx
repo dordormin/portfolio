@@ -10,6 +10,8 @@ import {
 import { BlendFunction } from "postprocessing";
 import * as THREE from "three";
 import { BlogJourney3D } from "./BlogJourney3D";
+import { useSoundContext } from "@/contexts/SoundContext";
+import { synthAudio } from "@/utils/audio";
 
 // Global mouse tracker
 const mouse = { x: 0, y: 0 };
@@ -209,6 +211,11 @@ function ShaderBlob() {
       meshRef.current.position.x = currentPos.current.x;
       meshRef.current.position.y = currentPos.current.y;
     }
+    
+    // Modulate WebGL ambient sound based on the scroll progress and time
+    // Higher pitch when scrolling down
+    const targetFreq = 55 + (scrollProgress * 40) + Math.sin(time) * 5;
+    synthAudio.setAmbientFrequency(targetFreq);
   });
 
   return (
@@ -292,6 +299,7 @@ function ParticleCloud({ isMobile }: { isMobile: boolean }) {
 
 export function BackgroundCanvas({ viewMode }: { viewMode: 'portfolio' | 'blog' }) {
   const [isMobile, setIsMobile] = useState(false);
+  const { isMuted } = useSoundContext();
 
   useEffect(() => {
     const checkMobile = () => setIsMobile(window.innerWidth < 768);
@@ -299,6 +307,14 @@ export function BackgroundCanvas({ viewMode }: { viewMode: 'portfolio' | 'blog' 
     window.addEventListener("resize", checkMobile);
     return () => window.removeEventListener("resize", checkMobile);
   }, []);
+
+  useEffect(() => {
+    if (isMuted) {
+      synthAudio.stopAmbient();
+    } else {
+      synthAudio.startAmbient(isMuted);
+    }
+  }, [isMuted]);
 
   return (
     <div className="fixed inset-0 z-0 pointer-events-none opacity-60 mix-blend-screen">
