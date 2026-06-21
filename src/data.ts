@@ -22,7 +22,7 @@ export const translations = {
       { title: "Microsoft Certified: Azure Developer Associate", issuer: "Microsoft", date: "Ongoing" },
       { title: "AWS Cloud Practitioner", issuer: "AWS", date: "Ongoing" },
       { title: "Become a Software Architect", issuer: "LinkedIn Learning", date: "December 2022" },
-      { title: "Web Programming & Design Certification", issuer: "Acerfi Cameroun", date: "2018" }
+      { title: "Web Programming & Design Certification", issuer: "Acerfi Cameroun", date: "2016" }
     ],
     experience: [
       {
@@ -105,7 +105,7 @@ export const translations = {
         role: "Web Developer & Designer Intern",
         company: "Creolink Communications",
         location: "Douala, Cameroon",
-        period: "2018",
+        period: "2017 - 2018",
         responsibilities: [
           "Initiated early career in tech by contributing to the complete web redesign for a prominent local internet service provider.",
           "Translated complex UI/UX wireframes from Adobe Photoshop into highly responsive, semantic HTML and CSS layouts.",
@@ -208,7 +208,7 @@ export const translations = {
       { title: "Microsoft Certified: Azure Developer Associate", issuer: "Microsoft", date: "En cours" },
       { title: "AWS Cloud Practitioner", issuer: "AWS", date: "En cours" },
       { title: "Devenir Architecte Logiciel", issuer: "LinkedIn Learning", date: "Décembre 2022" },
-      { title: "Formation Programmation Web & Design", issuer: "Acerfi Cameroun", date: "2018" }
+      { title: "Formation Programmation Web & Design", issuer: "Acerfi Cameroun", date: "2016" }
     ],
     experience: [
       {
@@ -291,7 +291,7 @@ export const translations = {
         role: "Stagiaire Développeur Web & Designer",
         company: "Creolink Communications",
         location: "Douala, Cameroun",
-        period: "2018",
+        period: "2017 - 2018",
         responsibilities: [
           "Initié mon parcours technologique en participant à la refonte web complète pour un fournisseur local majeur de services internet.",
           "Converti des maquettes UI/UX complexes créées sur Adobe Photoshop en interfaces web responsives et sémantiques (HTML/CSS).",
