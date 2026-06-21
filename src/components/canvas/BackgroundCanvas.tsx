@@ -137,26 +137,73 @@ function ShaderBlob() {
   // Smooth position state for interpolation
   const currentPos = useRef({ x: 0, y: -2 });
 
+  // Target positions and colors based on scroll sections
+  const sections = useMemo(() => [
+    // 0: Hero (Center, Orange)
+    { pos: new THREE.Vector3(0, -2, -8), color: new THREE.Color("#f97316") },
+    // 1: About (Right, Purple)
+    { pos: new THREE.Vector3(4, 0, -10), color: new THREE.Color("#8b5cf6") },
+    // 2: Experience (Left, Cyan)
+    { pos: new THREE.Vector3(-4, 2, -12), color: new THREE.Color("#06b6d4") },
+    // 3: Projects (Far Right, Pink)
+    { pos: new THREE.Vector3(5, -2, -10), color: new THREE.Color("#ec4899") },
+    // 4: Contact (Center Close, Orange)
+    { pos: new THREE.Vector3(0, 0, -4), color: new THREE.Color("#f97316") }
+  ], []);
+
   useFrame((state, delta) => {
     const time = state.clock.getElapsedTime();
+    
+    // 1. Calculate Scroll Progress (0.0 to 1.0)
+    const scrollY = window.scrollY;
+    // Fallback maxScroll to 1000 if not available to avoid NaN initially
+    const maxScroll = Math.max(1, document.body.scrollHeight - window.innerHeight);
+    const scrollProgress = Math.min(1, Math.max(0, scrollY / maxScroll));
+
+    // 2. Interpolate Section Values
+    const totalSections = sections.length - 1;
+    const currentSectionIdx = Math.min(Math.floor(scrollProgress * totalSections), totalSections - 1);
+    const nextSectionIdx = currentSectionIdx + 1;
+    // Local progress between the two current sections
+    const localProgress = (scrollProgress * totalSections) - currentSectionIdx;
+
+    const currentSection = sections[currentSectionIdx];
+    const nextSection = sections[nextSectionIdx];
+
+    // Smoothstep for more elegant transitions
+    const smoothProgress = THREE.MathUtils.smoothstep(localProgress, 0, 1);
+
+    // 3. Apply to Shader Material
     if (materialRef.current) {
       materialRef.current.uniforms.uTime.value = time;
+      
+      // Interpolate colors
+      const targetColor = currentSection.color.clone().lerp(nextSection.color, smoothProgress);
+      materialRef.current.uniforms.uColorStart.value.lerp(targetColor, delta * 2);
     }
-    if (meshRef.current) {
-      // Interactive rotation - react to mouse
-      const targetRotationX = time * 0.02 + mouse.y * 0.5;
-      const targetRotationY = time * 0.05 + mouse.x * 0.5;
 
-      meshRef.current.rotation.x += (targetRotationX - meshRef.current.rotation.x) * delta * 2;
-      meshRef.current.rotation.y += (targetRotationY - meshRef.current.rotation.y) * delta * 2;
+    // 4. Apply to Mesh (Position & Rotation)
+    if (meshRef.current) {
+      // Calculate target base position from scroll
+      const baseTargetPos = currentSection.pos.clone().lerp(nextSection.pos, smoothProgress);
+
+      // Interactive rotation - react to mouse + base scroll rotation
+      const targetRotationX = time * 0.02 + mouse.y * 0.5 + (scrollProgress * Math.PI);
+      const targetRotationY = time * 0.05 + mouse.x * 0.5 + (scrollProgress * Math.PI * 2);
+
+      meshRef.current.rotation.x = THREE.MathUtils.damp(meshRef.current.rotation.x, targetRotationX, 4, delta);
+      meshRef.current.rotation.y = THREE.MathUtils.damp(meshRef.current.rotation.y, targetRotationY, 4, delta);
       meshRef.current.rotation.z = time * 0.03;
 
-      // Interactive position (subtle floating towards mouse)
-      const targetPosX = mouse.x * 2;
-      const targetPosY = -2 + mouse.y * 1.5;
+      // Interactive position (base position + subtle floating towards mouse)
+      const targetPosX = baseTargetPos.x + (mouse.x * 2);
+      const targetPosY = baseTargetPos.y + (mouse.y * 1.5);
 
-      currentPos.current.x += (targetPosX - currentPos.current.x) * delta * 1.5;
-      currentPos.current.y += (targetPosY - currentPos.current.y) * delta * 1.5;
+      currentPos.current.x = THREE.MathUtils.damp(currentPos.current.x, targetPosX, 3, delta);
+      currentPos.current.y = THREE.MathUtils.damp(currentPos.current.y, targetPosY, 3, delta);
+      
+      // Interpolate Z smoothly
+      meshRef.current.position.z = THREE.MathUtils.damp(meshRef.current.position.z, baseTargetPos.z, 2, delta);
 
       meshRef.current.position.x = currentPos.current.x;
       meshRef.current.position.y = currentPos.current.y;
@@ -208,12 +255,21 @@ function ParticleCloud() {
 
   useFrame((state, delta) => {
     if (ref.current) {
-      // Rotation logic + react to mouse
-      const targetRotX = mouse.y * 0.2;
-      const targetRotY = mouse.x * 0.2;
+      // Calculate Scroll Progress
+      const scrollY = window.scrollY;
+      const maxScroll = Math.max(1, document.body.scrollHeight - window.innerHeight);
+      const scrollProgress = Math.min(1, Math.max(0, scrollY / maxScroll));
 
-      ref.current.rotation.x += (targetRotX - ref.current.rotation.x) * delta + (delta / 10);
-      ref.current.rotation.y += (targetRotY - ref.current.rotation.y) * delta + (delta / 15);
+      // Rotation logic + react to mouse
+      const targetRotX = mouse.y * 0.2 + (scrollProgress * Math.PI * 0.5);
+      const targetRotY = mouse.x * 0.2 + (scrollProgress * Math.PI);
+
+      ref.current.rotation.x = THREE.MathUtils.damp(ref.current.rotation.x, targetRotX, 2, delta);
+      ref.current.rotation.y = THREE.MathUtils.damp(ref.current.rotation.y, targetRotY, 2, delta);
+      
+      // As you scroll down, the particles rush past the camera (Z translation)
+      const targetPosZ = scrollProgress * 15; // Moves from 0 to 15 forward
+      ref.current.position.z = THREE.MathUtils.damp(ref.current.position.z, targetPosZ, 2, delta);
     }
   });
 
