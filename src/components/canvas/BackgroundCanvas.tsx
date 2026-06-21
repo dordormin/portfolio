@@ -9,6 +9,7 @@ import {
 } from "@react-three/postprocessing";
 import { BlendFunction } from "postprocessing";
 import * as THREE from "three";
+import { BlogGallery } from "./BlogGallery";
 
 // Global mouse tracker
 const mouse = { x: 0, y: 0 };
@@ -289,7 +290,7 @@ function ParticleCloud({ isMobile }: { isMobile: boolean }) {
   );
 }
 
-export function BackgroundCanvas() {
+export function BackgroundCanvas({ viewMode }: { viewMode: 'portfolio' | 'blog' }) {
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
@@ -307,7 +308,8 @@ export function BackgroundCanvas() {
         gl={{ powerPreference: "high-performance", antialias: false, stencil: false, depth: false }}
       >
         <ParticleCloud isMobile={isMobile} />
-        <ShaderBlob />
+        {viewMode === 'portfolio' && <ShaderBlob />}
+        {viewMode === 'blog' && <BlogGallery isMobile={isMobile} />}
 
         {!isMobile && (
           <EffectComposer>

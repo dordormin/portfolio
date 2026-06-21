@@ -154,6 +154,32 @@ export const translations = {
         }
       }
     ],
+    blogPosts: [
+      {
+        id: "future-of-llms",
+        title: "The Future of LLMs in Enterprise Architecture",
+        date: "October 15, 2025",
+        excerpt: "Exploring how Retrieval-Augmented Generation (RAG) is transforming the way large corporations index and query their proprietary data.",
+        content: "Large Language Models (LLMs) are no longer just chatbots; they are becoming integral components of enterprise architecture. By utilizing Retrieval-Augmented Generation (RAG), companies can securely connect their internal databases to AI models. This prevents hallucination and ensures that answers are grounded in proprietary facts. My work on Omnibrain demonstrated that by vectorizing over 10,000 documents, we can achieve sub-second latency for complex queries, ultimately reducing information retrieval time by 80%.",
+        tags: ["AI", "RAG", "Enterprise"]
+      },
+      {
+        id: "aws-serverless-2026",
+        title: "Scaling with AWS Serverless in 2026",
+        date: "January 22, 2026",
+        excerpt: "A deep dive into why moving from traditional monolithic servers to AWS Lambda and Fargate can cut costs and improve uptime.",
+        content: "Managing servers can be a heavy burden for growing startups. By transitioning to AWS Serverless architectures, teams can focus on writing code rather than managing infrastructure. Services like AWS Lambda allow you to run code without provisioning or managing servers, and you pay only for the compute time you consume. In recent deployments, adopting serverless has shown to reduce infrastructure overhead by nearly 40% while maintaining 99.9% uptime across critical B2B endpoints.",
+        tags: ["AWS", "Cloud", "DevOps"]
+      },
+      {
+        id: "react-three-fiber-ux",
+        title: "Immersive Web: React Three Fiber",
+        date: "April 05, 2026",
+        excerpt: "How adding 3D WebGL components to traditional web applications can dramatically increase user engagement and retention.",
+        content: "The web is transitioning from flat, 2D interfaces to immersive, spatial experiences. React Three Fiber (R3F) provides a powerful bridge between React's declarative state management and Three.js's rendering engine. By carefully implementing WebGL canvases—such as interactive particle systems and 3D galleries—developers can create 'Awwwards-level' websites. The key is balancing aesthetic complexity with mobile performance, ensuring that post-processing effects gracefully degrade on low-end devices.",
+        tags: ["WebGL", "React", "UX"]
+      }
+    ],
     ui: {
       viewWork: "View Work",
       contactMe: "Contact Me",
@@ -339,6 +365,32 @@ export const translations = {
           solution: "Développement du backend grâce à l'écosystème Spring Boot et Lombok. Programmation d'un moteur de génération de pages HTML et JS pour de la conception par glisser-déposer sur base de thèmes personnalisés. Emploi régulier de modules DevOps pendant le cycle de vie.",
           impact: "Permis à des utilisateurs néophytes de déployer leur site seul. Le format de thème conçu posa de solides bases pour l'incorporation de futurs thèmes par le reste de l'équipe, et ce d'une manière incroyablement simple.",
         }
+      }
+    ],
+    blogPosts: [
+      {
+        id: "future-of-llms",
+        title: "L'avenir des LLMs en Architecture d'Entreprise",
+        date: "15 Octobre 2025",
+        excerpt: "Découverte de la manière dont la génération augmentée par la recherche (RAG) transforme l'indexation et la requête de données propriétaires.",
+        content: "Les grands modèles de langage (LLM) ne sont plus de simples chatbots ; ils deviennent des composants à part entière de l'architecture d'entreprise. En utilisant le RAG (Retrieval-Augmented Generation), les entreprises peuvent connecter en toute sécurité leurs bases de données internes aux modèles d'IA. Mon travail sur Omnibrain a démontré qu'en vectorisant plus de 10 000 documents, nous pouvons obtenir une latence inférieure à la seconde pour des requêtes complexes, réduisant ainsi le temps de recherche d'informations de 80 %.",
+        tags: ["IA", "RAG", "Entreprise"]
+      },
+      {
+        id: "aws-serverless-2026",
+        title: "Évolutivité avec AWS Serverless en 2026",
+        date: "22 Janvier 2026",
+        excerpt: "Une analyse approfondie des raisons pour lesquelles le passage des serveurs monolithiques à AWS Lambda peut réduire les coûts.",
+        content: "La gestion des serveurs peut être un lourd fardeau pour les startups en croissance. En passant à des architectures AWS Serverless, les équipes peuvent se concentrer sur le code plutôt que sur l'infrastructure. Des services comme AWS Lambda permettent d'exécuter du code sans provisionner ni gérer de serveurs, en ne payant que pour le temps de calcul consommé. L'adoption du serverless a permis de réduire les frais d'infrastructure de près de 40 % tout en maintenant une disponibilité de 99,9 %.",
+        tags: ["AWS", "Cloud", "DevOps"]
+      },
+      {
+        id: "react-three-fiber-ux",
+        title: "Web Immersif : React Three Fiber",
+        date: "05 Avril 2026",
+        excerpt: "Comment l'ajout de composants 3D WebGL aux applications web traditionnelles peut augmenter considérablement l'engagement.",
+        content: "Le web passe d'interfaces 2D plates à des expériences spatiales immersives. React Three Fiber (R3F) fournit un pont puissant entre la gestion d'état déclarative de React et le moteur de rendu de Three.js. En implémentant soigneusement des toiles WebGL — telles que des systèmes de particules interactifs et des galeries 3D — les développeurs peuvent créer des sites d'un niveau international. La clé est d'équilibrer la complexité esthétique et les performances mobiles.",
+        tags: ["WebGL", "React", "UX"]
       }
     ],
     ui: {

@@ -4,7 +4,12 @@ import { useLanguage } from "@/contexts/LanguageContext";
 import { Magnetic } from "./ui/Magnetic";
 import { Logo } from "./ui/Logo";
 
-export function Navbar() {
+interface NavbarProps {
+  viewMode: 'portfolio' | 'blog';
+  setViewMode: (mode: 'portfolio' | 'blog') => void;
+}
+
+export function Navbar({ viewMode, setViewMode }: NavbarProps) {
   const [activeSegment, setActiveSegment] = useState("hero");
   const { language, setLanguage } = useLanguage();
 
@@ -68,10 +73,17 @@ export function Navbar() {
           <Magnetic key={item.href} intensity={0.3}>
             <a
               href={item.href}
-              onClick={(e) => handleNavClick(e, item.href)}
+              onClick={(e) => {
+                if (viewMode === 'blog') {
+                  setViewMode('portfolio');
+                  setTimeout(() => handleNavClick(e, item.href), 100);
+                } else {
+                  handleNavClick(e, item.href);
+                }
+              }}
               className={cn(
                 "whitespace-nowrap md:[writing-mode:vertical-rl] md:rotate-180 text-[10px] uppercase tracking-widest md:tracking-[0.3em] font-semibold transition-colors",
-                activeSegment === item.href.substring(1)
+                activeSegment === item.href.substring(1) && viewMode === 'portfolio'
                   ? "text-white underline underline-offset-8"
                   : "text-white/50 hover:text-white"
               )}
@@ -80,6 +92,21 @@ export function Navbar() {
             </a>
           </Magnetic>
         ))}
+
+        {/* Blog Button */}
+        <Magnetic intensity={0.3}>
+          <button
+            onClick={() => setViewMode(viewMode === 'blog' ? 'portfolio' : 'blog')}
+            className={cn(
+              "whitespace-nowrap md:[writing-mode:vertical-rl] md:rotate-180 text-[10px] uppercase tracking-widest md:tracking-[0.3em] font-semibold transition-colors",
+              viewMode === 'blog'
+                ? "text-primary underline underline-offset-8"
+                : "text-primary/70 hover:text-primary"
+            )}
+          >
+            {language === 'en' ? 'Blog 3D' : 'Blog 3D'}
+          </button>
+        </Magnetic>
       </div>
       <div className="hidden md:flex flex-col gap-4 text-white/40 items-center">
         <div className="w-[1px] h-4 md:h-6 lg:h-8 xl:h-12 bg-white/20 rounded-full"></div>
