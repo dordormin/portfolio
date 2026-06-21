@@ -34,13 +34,10 @@ export function CustomCursor() {
     };
   }, []);
 
-  // Use a fixed class on body instead to hide default cursor, but do it here for scoped logic if wanted
-  // But generally adding cursor-none to index.css is better. We'll do that below.
-
   return (
     <div className="hidden md:block">
       <motion.div
-        className="fixed top-0 left-0 w-4 h-4 bg-orange-500 rounded-full pointer-events-none z-[100] mix-blend-screen"
+        className="fixed top-0 left-0 w-4 h-4 bg-orange-500 rounded-full pointer-events-none z-[9999] mix-blend-screen"
         animate={{
           x: mousePosition.x - 8,
           y: mousePosition.y - 8,
@@ -55,7 +52,7 @@ export function CustomCursor() {
         }}
       />
       <motion.div
-        className="fixed top-0 left-0 w-12 h-12 border border-orange-500/50 rounded-full pointer-events-none z-[99]"
+        className="fixed top-0 left-0 w-12 h-12 border border-orange-500/50 rounded-full pointer-events-none z-[9998]"
         animate={{
           x: mousePosition.x - 24,
           y: mousePosition.y - 24,

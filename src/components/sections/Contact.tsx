@@ -10,8 +10,8 @@ export function Contact() {
   const t = translations[language];
 
   return (
-    <footer id="contact" className="px-6 sm:px-8 md:px-16 pt-16 pb-8 border-t border-white/5 flex flex-col z-10 relative">
-      <div className="max-w-6xl w-full mx-auto">
+    <footer id="contact" className="px-6 sm:px-10 md:px-16 lg:px-24 pt-16 pb-8 flex flex-col z-10 relative">
+      <div className="max-w-[90rem] w-full mx-auto">
         <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end w-full mb-16 gap-12 lg:gap-8">
         <div>
           <h2 className="text-5xl sm:text-6xl lg:text-8xl font-light font-serif italic text-white tracking-tighter leading-none mb-6">
