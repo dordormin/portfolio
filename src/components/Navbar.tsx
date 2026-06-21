@@ -44,10 +44,10 @@ export function Navbar() {
   return (
     <nav
       className={cn(
-        "w-full md:w-20 lg:w-24 border-b md:border-b-0 md:border-r border-white/10 flex flex-row md:flex-col items-center justify-between md:py-6 bg-black/40 backdrop-blur-xl shrink-0 sticky top-0 z-50 md:h-screen"
+        "w-full md:w-20 lg:w-24 border-b md:border-b-0 md:border-r border-border flex flex-row md:flex-col items-center justify-between md:py-6 bg-black/40 backdrop-blur-xl shrink-0 sticky top-0 z-50 md:h-screen"
       )}
     >
-      <div className="flex flex-row md:flex-col items-center gap-6 sm:gap-8 shrink-0 pr-6 sm:pr-8 md:pr-0 md:w-full border-r border-white/10 md:border-r-0 md:border-b py-4 md:py-0 px-6 sm:px-8 md:px-0 md:pb-4 lg:pb-6 self-stretch md:self-auto">
+      <div className="flex flex-row md:flex-col items-center gap-6 sm:gap-8 shrink-0 pr-6 sm:pr-8 md:pr-0 md:w-full border-r border-border md:border-r-0 md:border-b py-4 md:py-0 px-6 sm:px-8 md:px-0 md:pb-4 lg:pb-6 self-stretch md:self-auto">
         <Magnetic intensity={0.2}>
           <div className="text-xl sm:text-2xl md:text-xl lg:text-3xl font-bold tracking-tighter cursor-hover">DM</div>
         </Magnetic>
@@ -67,7 +67,7 @@ export function Navbar() {
               href={item.href}
               onClick={(e) => handleNavClick(e, item.href)}
               className={cn(
-                "md:[writing-mode:vertical-rl] md:rotate-180 text-[10px] uppercase tracking-widest md:tracking-[0.3em] font-semibold transition-colors",
+                "whitespace-nowrap md:[writing-mode:vertical-rl] md:rotate-180 text-[10px] uppercase tracking-widest md:tracking-[0.3em] font-semibold transition-colors",
                 activeSegment === item.href.substring(1)
                   ? "text-white underline underline-offset-8"
                   : "text-white/50 hover:text-white"

@@ -10,7 +10,26 @@ interface LanguageContextProps {
 const LanguageContext = createContext<LanguageContextProps | undefined>(undefined);
 
 export function LanguageProvider({ children }: { children: ReactNode }) {
-  const [language, setLanguage] = useState<Language>('en');
+  const [language, setLanguage] = useState<Language>(() => {
+    if (typeof window !== 'undefined') {
+      try {
+        const browserLang = navigator.language.toLowerCase();
+        const timeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+        
+        // Check if user is in French-speaking regions (Quebec/France) or has French as browser language
+        if (
+          browserLang.startsWith('fr') || 
+          timeZone === 'America/Montreal' || 
+          timeZone === 'Europe/Paris'
+        ) {
+          return 'fr';
+        }
+      } catch (e) {
+        // Fallback silently
+      }
+    }
+    return 'en';
+  });
 
   return (
     <LanguageContext.Provider value={{ language, setLanguage }}>

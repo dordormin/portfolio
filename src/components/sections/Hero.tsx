@@ -24,8 +24,8 @@ export function Hero() {
   }, []);
 
   return (
-    <section id="hero" className="relative min-h-screen flex flex-col justify-center px-6 sm:px-10 md:px-16 lg:px-24 py-24 md:py-0 overflow-hidden">
-      <div className="max-w-[90rem] w-full mx-auto relative z-10 flex flex-col lg:flex-row items-center justify-between gap-12 sm:gap-16 lg:gap-24 pt-24 lg:pt-0">
+    <section id="hero" className="relative min-h-screen flex flex-col px-6 sm:px-10 md:px-16 lg:px-24 overflow-hidden">
+      <div className="max-w-[90rem] w-full mx-auto relative z-10 flex flex-col lg:flex-row items-center justify-between gap-12 sm:gap-16 lg:gap-24 my-auto pt-32 sm:pt-40 pb-24 lg:pt-0 lg:pb-0">
         
         {/* Left Side: Intro */}
         <div ref={textRef} className="w-full lg:w-3/5 xl:w-2/3">

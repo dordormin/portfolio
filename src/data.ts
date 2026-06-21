@@ -11,10 +11,10 @@ export const translations = {
       summary: "Dynamic Full Stack Developer & AI Engineer with 5 years of professional application development experience, built upon an 8-year foundation in the tech industry that began with early web creation. Evolving from those fundamentals and a formal Computer Science background, I bring deep expertise in mature full-stack frameworks, including .NET, Spring Boot, Laravel, and Django on the backend, seamlessly paired with modern frontends like React, Angular, and Vite. I am currently focused on AI engineering to bridge robust enterprise architectures with intelligent, data-driven systems.",
     },
     skills: [
-      { category: "Software Architecture & Backend", items: [".NET & C#", "Python (FastAPI, Django)", "Java & Spring Boot", "Node.js", "Entity Framework", "SQLAlchemy"] },
-      { category: "Software Frontend & Mobile", items: ["React & Next.js", "Angular", "JavaScript / TypeScript", "HTML5 & CSS3", "React Native", "Android"] },
-      { category: "Software AI & Machine Learning", items: ["TensorFlow & PyTorch", "Scikit-Learn & Pandas", "Neural Networks", "LangChain & LangGraph", "RAG Architectures", "Data Pipelines & SQL"] },
-      { category: "Software DevOps & Infrastructure", items: ["Docker & Kubernetes", "Terraform & Ansible", "CI/CD Pipelines", "AWS & Azure Cloud", "Git & Azure DevOps", "Agile & TDD"] },
+      { category: "Backend & Database", items: ["C# & .NET", "Python (FastAPI, Django)", "Java & Spring Boot", "PostgreSQL & SQLite", "MongoDB"] },
+      { category: "Frontend & UI", items: ["React & Vite", "Angular", "JavaScript / TypeScript", "HTML5 & CSS3"] },
+      { category: "AI & Data Engineering", items: ["LangChain & LangGraph", "RAG Architectures", "Data Pipelines", "SQLAlchemy"] },
+      { category: "DevOps & Quality", items: ["Docker & CI/CD", "AWS Cloud", "Agile & Jira", "TDD & Testing"] },
     ],
     certifications: [
       { title: "Machine Learning Specialization", issuer: "Stanford / DeepLearning.AI", date: "April 2023" },
@@ -154,6 +154,20 @@ export const translations = {
       viewLiveSite: "View Live Site",
       project: "PROJECT",
       certifications: "Certifications",
+      osWidget: {
+        localEnv: "Local Env",
+        sysOk: "SYS_OK",
+        weather: {
+          clear: "Clear",
+          sunny: "Sunny",
+          cloudy: "Cloudy",
+          foggy: "Foggy",
+          rainy: "Rainy",
+          snowy: "Snowy",
+          stormy: "Stormy",
+          unavailable: "Unavailable"
+        }
+      }
     }
   },
   fr: {
@@ -168,10 +182,10 @@ export const translations = {
       summary: "Développeur Full Stack & Ingénieur IA dynamique avec 5 ans d'expérience professionnelle en développement d'applications, bâtis sur 8 ans de parcours dans la tech depuis mes premiers pas en création web. Ayant évolué à partir de ces fondamentaux et d'un baccalauréat en informatique, j'apporte une solide expertise dans les frameworks full-stack d'entreprise, incluant .NET, Spring Boot, Laravel et Django en backend, couplés à React, Angular et Vite en frontend. Je me concentre actuellement sur l'ingénierie IA pour concevoir des systèmes intelligents et bâtir les logiciels de demain.",
     },
     skills: [
-      { category: "Architecture Logicielle & Backend", items: [".NET & C#", "Python (FastAPI, Django)", "Java & Spring Boot", "Node.js", "Entity Framework", "SQLAlchemy"] },
-      { category: "Frontend Logiciel & Mobile", items: ["React & Next.js", "Angular", "JavaScript / TypeScript", "HTML5 & CSS3", "React Native", "Android"] },
-      { category: "IA Logicielle & Machine Learning", items: ["TensorFlow & PyTorch", "Scikit-Learn & Pandas", "Réseaux de Neurones", "LangChain & LangGraph", "Architectures RAG", "Pipelines de Données & SQL"] },
-      { category: "DevOps Logiciel & Infrastructure", items: ["Docker & Kubernetes", "Terraform & Ansible", "Pipelines CI/CD", "AWS & Azure Cloud", "Git & Azure DevOps", "Agile & TDD"] },
+      { category: "Backend & Bases de données", items: ["C# & .NET", "Python (FastAPI, Django)", "Java & Spring Boot", "PostgreSQL & SQLite", "MongoDB"] },
+      { category: "Frontend & UI", items: ["React & Vite", "Angular", "JavaScript / TypeScript", "HTML5 & CSS3"] },
+      { category: "IA & Ingénierie de Données", items: ["LangChain & LangGraph", "Architectures RAG", "Pipelines de Données", "SQLAlchemy"] },
+      { category: "DevOps & Qualité", items: ["Docker & CI/CD", "AWS Cloud", "Agile & Jira", "TDD & Tests"] },
     ],
     certifications: [
       { title: "Spécialisation Machine Learning", issuer: "Stanford / DeepLearning.AI", date: "Avril 2023" },
@@ -311,6 +325,20 @@ export const translations = {
       viewLiveSite: "Voir le site en direct",
       project: "PROJET",
       certifications: "Certifications",
+      osWidget: {
+        localEnv: "Env Local",
+        sysOk: "SYS_OK",
+        weather: {
+          clear: "Dégagé",
+          sunny: "Ensoleillé",
+          cloudy: "Nuageux",
+          foggy: "Brouillard",
+          rainy: "Pluvieux",
+          snowy: "Neigeux",
+          stormy: "Orageux",
+          unavailable: "Indisponible"
+        }
+      }
     }
   }
 };
