@@ -33,6 +33,7 @@ export const translations = {
           "Architected and maintained robust full-stack web applications, ensuring high performance, scalability, and strict adherence to modern coding standards.",
           "Collaborated closely with cross-functional teams and stakeholders to gather requirements, design intuitive user interfaces, and seamlessly deploy end-to-end solutions.",
           "Optimized application performance by resolving complex technical issues, directly improving load times and overall software quality.",
+          "Implemented automated CI/CD pipelines and established comprehensive test suites using Jest, significantly increasing test coverage and ensuring robust module integrity."
         ],
         achievements: [
           "Spearheaded the development of a flagship web platform, driving a 30% increase in user engagement and reducing page load times by 25%.",
@@ -204,6 +205,7 @@ export const translations = {
           "Architecturé et maintenu des applications web full-stack robustes, garantissant de hautes performances, une grande évolutivité et le strict respect des normes de codage modernes.",
           "Collaboré étroitement avec des équipes interfonctionnelles pour recueillir les besoins, concevoir des interfaces intuitives et déployer des solutions de bout en bout.",
           "Optimisé les performances des applications en résolvant des problèmes techniques complexes, améliorant directement les temps de chargement et la qualité globale.",
+          "Mis en place des pipelines CI/CD automatisés et des suites de tests unitaires avec Jest, augmentant de manière mesurable la couverture de test et garantissant l'intégrité des modules."
         ],
         achievements: [
           "Piloté le développement d'une plateforme web majeure, entraînant une augmentation de 30% de l'engagement utilisateur et réduisant les temps de chargement de 25%.",
