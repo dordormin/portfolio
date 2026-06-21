@@ -171,7 +171,7 @@ export function Navbar({ viewMode, setViewMode }: NavbarProps) {
         {/* Bulletproof Safe Centering Spacer (Bottom) */}
         <div className="hidden md:block flex-1 shrink-0 min-h-0"></div>
       </div>
-      <div className="hidden md:flex flex-col gap-4 text-white/40 items-center justify-end flex-1 pb-6">
+      <div className="hidden md:flex flex-col gap-4 text-white/40 items-center justify-end shrink-0 pb-6">
         <span className="text-[10px] [writing-mode:vertical-rl] rotate-180 tracking-widest">© 2026</span>
       </div>
     </nav>
