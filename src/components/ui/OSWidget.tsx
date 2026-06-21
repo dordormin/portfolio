@@ -92,11 +92,8 @@ export function OSWidget() {
       initial={{ opacity: 0, y: 20, filter: 'blur(10px)' }}
       animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
       transition={{ duration: 1, ease: 'easeOut', delay: 0.5 }}
-      className="flex flex-col gap-3 sm:gap-4 p-4 sm:p-5 md:p-6 rounded-2xl sm:rounded-3xl bg-white/5 backdrop-blur-xl border border-white/10 shadow-2xl shadow-black/50 overflow-hidden relative w-full"
+      className="flex flex-col gap-3 sm:gap-4 p-4 sm:p-5 md:p-6 rounded-2xl sm:rounded-3xl bg-background border border-border shadow-2xl shadow-black/80 overflow-hidden relative w-full"
     >
-      {/* Decorative gradient blob inside widget */}
-      <div className="absolute -top-10 -right-10 w-24 h-24 sm:w-32 sm:h-32 bg-white/5 rounded-full blur-2xl pointer-events-none"></div>
-
       {/* Header: Date & Time */}
       <div className="flex items-center justify-between border-b border-white/10 pb-3 sm:pb-4">
         <div className="flex flex-col">
@@ -121,7 +118,7 @@ export function OSWidget() {
           </div>
         </div>
         
-        <div className="relative w-12 h-12 sm:w-16 sm:h-16 flex items-center justify-center bg-white/5 rounded-xl sm:rounded-2xl border border-white/5 shrink-0">
+        <div className="relative w-12 h-12 sm:w-16 sm:h-16 flex items-center justify-center bg-surface rounded-xl sm:rounded-2xl border border-border shrink-0">
           <AnimatePresence mode="wait">
             <motion.div
               key={weather.id}

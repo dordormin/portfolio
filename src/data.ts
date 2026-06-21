@@ -45,12 +45,12 @@ export const translations = {
         location: "Sherbrooke, QC",
         period: "September 2021 - December 2021",
         responsibilities: [
-          "Led full-lifecycle software development as an Analyst Programmer, overseeing everything from initial requirements analysis to DevOps and streamlining deployment pipelines.",
-          "Architected scalable backend services, routers, and automated delivery APIs using Python, Django, and SQLAlchemy on AWS to securely connect with enterprise clients.",
-          "Built responsive frontend interfaces and data analytics dashboards using Angular to track delivery confirmations and verify operational data."
+          "Led full-lifecycle software development as an Analyst Programmer, overseeing requirements analysis, DevOps, and deployment pipelines.",
+          "Engineered robust B2B REST APIs and complex ORMs (SQLAlchemy, Python, Django) to integrate Kolineo's warehousing and redistribution systems with external enterprise clients (e.g., Amazon, Costco).",
+          "Managed cloud infrastructure by securely deploying backend services and Angular frontend applications on AWS, utilizing AWS for secret management and hosting."
         ],
         achievements: [
-          "Successfully integrated automated delivery APIs with major external partners (including Walmart and Costco), significantly streamlining supply chain communications.",
+          "Successfully deployed scalable B2B integration services, enabling seamless warehousing data synchronization with major retailers (Amazon, Costco).",
           "Completed the end-to-end analytics and development mandate ahead of schedule, bridging complex backend integrations before transitioning to a Data Engineer internship."
         ],
       },
@@ -91,7 +91,7 @@ export const translations = {
         period: "January 2020 - April 2020",
         responsibilities: [
           "Developed high-quality software solutions utilizing rigorous Test-Driven Development (TDD) methodologies.",
-          "Authored comprehensive unit and integration tests using QUnit and OPA5, ensuring robust application stability.",
+          "Authored comprehensive unit tests using QUnit and OPA5, and conducted API integration testing with Postman, ensuring robust application stability.",
           "Actively participated in Agile Scrum ceremonies, utilizing Jira for sprint planning, task tracking, and continuous delivery."
         ],
         achievements: [
@@ -216,12 +216,12 @@ export const translations = {
         location: "Sherbrooke, QC",
         period: "Septembre 2021 - Décembre 2021",
         responsibilities: [
-          "Mené le cycle de développement logiciel en tant qu'Analyste Programmeur, supervisant l'analyse des besoins, le DevOps et la rationalisation des pipelines de déploiement.",
-          "Architecturé des services backend évolutifs et des API de relais de livraison avec Python, Django et SQLAlchemy sur AWS pour répondre aux entreprises clientes.",
-          "Conçu des interfaces frontend et des tableaux de bord interactifs avec Angular pour suivre et vérifier les données opérationnelles."
+          "Mené le cycle de développement logiciel en tant qu'Analyste Programmeur, supervisant l'analyse des besoins, le DevOps et les pipelines de déploiement.",
+          "Conçu des API REST B2B et des modèles ORM (SQLAlchemy, Python, Django) pour intégrer les systèmes d'entreposage et de redistribution de Kolineo avec des clients entreprises (ex: Amazon, Costco).",
+          "Géré l'infrastructure cloud en déployant de manière sécurisée les services backend et l'application frontend Angular sur AWS, incluant la gestion des clés secrètes."
         ],
         achievements: [
-          "Intégré avec succès des API automatisées de livraison pour de grands partenaires (dont Walmart et Costco), simplifiant de manière significative la communication de la chaîne d'approvisionnement.",
+          "Déployé avec succès des services d'intégration B2B évolutifs, permettant une synchronisation fluide des données d'entreposage avec de grands distributeurs (Amazon, Costco).",
           "Achevé le mandat d'analyse et de développement en avance sur le calendrier, en déployant de complexes intégrations backend."
         ],
       },
@@ -262,7 +262,7 @@ export const translations = {
         period: "Janvier 2020 - Avril 2020",
         responsibilities: [
           "Développé des solutions logicielles en utilisant la méthodologie rigoureuse de Test-Driven Development (TDD).",
-          "Conçu des tests unitaires et d'intégration complets avec QUnit et OPA5, assurant la stabilité de l'application.",
+          "Conçu des tests unitaires complets avec QUnit et OPA5, et réalisé des tests d'intégration d'API avec Postman, assurant la stabilité de l'application.",
           "Participé activement aux cérémonies Agile Scrum avec Jira pour la planification, le suivi et la livraison continue."
         ],
         achievements: [
