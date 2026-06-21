@@ -18,7 +18,7 @@ export default function App() {
   return (
     <SmoothScroll>
       <CustomCursor />
-      <div className="relative min-h-screen flex flex-col md:flex-row text-white antialiased selection:bg-orange-500/30 font-sans bg-background overflow-hidden">
+      <div className="relative min-h-screen flex flex-col md:flex-row text-white antialiased selection:bg-orange-500/30 font-sans bg-background overflow-x-hidden">
         <Loader />
         {viewMode === 'portfolio' && <ScrollProgress />}
       {/* Atmospheric Background */}
