@@ -64,23 +64,25 @@ export function Navbar({ viewMode, setViewMode }: NavbarProps) {
             <Logo className="w-10 h-10 text-white/80 group-hover:text-orange-500 transition-colors duration-500" />
           </div>
         </Magnetic>
-        <Magnetic>
-          <button 
-            onClick={() => setLanguage(language === 'en' ? 'fr' : 'en')}
-            className="text-[10px] md:text-[11px] font-mono border border-white/20 rounded px-2 md:px-3 py-1 md:py-1.5 uppercase hover:bg-white/20 hover:text-orange-400 transition-colors shrink-0"
-          >
-            {language}
-          </button>
-        </Magnetic>
-        <Magnetic>
-          <button
-            onClick={toggleMute}
-            className="p-1.5 md:p-2 border border-white/20 rounded-full hover:bg-white/20 hover:text-orange-400 transition-colors shrink-0 ml-0 md:mt-4"
-            title={isMuted ? "Activer le son" : "Désactiver le son"}
-          >
-            {isMuted ? <VolumeX className="w-3.5 h-3.5 md:w-4 md:h-4 text-white/60" /> : <Volume2 className="w-3.5 h-3.5 md:w-4 md:h-4 text-white/90" />}
-          </button>
-        </Magnetic>
+        <div className="flex flex-row md:flex-col items-center gap-2 sm:gap-3 md:gap-4">
+          <Magnetic>
+            <button 
+              onClick={() => setLanguage(language === 'en' ? 'fr' : 'en')}
+              className="text-[10px] md:text-[11px] font-mono border border-white/20 rounded px-2 md:px-3 py-1 md:py-1.5 uppercase hover:bg-white/20 hover:text-orange-400 transition-colors shrink-0"
+            >
+              {language}
+            </button>
+          </Magnetic>
+          <Magnetic>
+            <button
+              onClick={toggleMute}
+              className="p-1.5 md:p-2 border border-white/20 rounded-full hover:bg-white/20 hover:text-orange-400 transition-colors shrink-0"
+              title={isMuted ? "Activer le son" : "Désactiver le son"}
+            >
+              {isMuted ? <VolumeX className="w-3.5 h-3.5 md:w-4 md:h-4 text-white/60" /> : <Volume2 className="w-3.5 h-3.5 md:w-4 md:h-4 text-white/90" />}
+            </button>
+          </Magnetic>
+        </div>
       </div>
 
       <div className="flex flex-row md:flex-col gap-6 sm:gap-8 md:gap-6 lg:gap-8 overflow-x-auto md:overflow-x-hidden md:overflow-y-auto [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none] items-center flex-1 min-w-0 md:min-h-0 justify-start md:w-full py-4 pl-6 sm:pl-8 md:pl-0 pr-6 sm:pr-8 md:pr-0">
