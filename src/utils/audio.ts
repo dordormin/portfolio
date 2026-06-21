@@ -73,6 +73,8 @@ class SynthAudio {
 
   // A continuous ambient drone
   private ambientOsc: OscillatorNode | null = null;
+  private ambientOsc2: OscillatorNode | null = null;
+  private ambientFilter: BiquadFilterNode | null = null;
   private ambientGain: GainNode | null = null;
 
   startAmbient(isMuted: boolean) {
@@ -82,47 +84,71 @@ class SynthAudio {
     if (this.ambientOsc) return; // Already playing
 
     const t = this.context.currentTime;
+    
+    // Create two oscillators for a richer, softer "pad" effect
     this.ambientOsc = this.context.createOscillator();
+    this.ambientOsc2 = this.context.createOscillator();
+    
+    this.ambientFilter = this.context.createBiquadFilter();
     this.ambientGain = this.context.createGain();
 
     this.ambientOsc.type = 'sine';
-    this.ambientOsc.frequency.setValueAtTime(55, t); // Very low drone
+    this.ambientOsc2.type = 'triangle'; // adds soft harmonics
 
-    // Slight LFO on frequency for movement
+    // Healing/Calming frequency base (e.g., 198Hz - half of 396Hz)
+    this.ambientOsc.frequency.setValueAtTime(198, t);
+    this.ambientOsc2.frequency.setValueAtTime(198.5, t); // Slight detune for chorus
+
+    // Lowpass filter to make it very soft and distant
+    this.ambientFilter.type = 'lowpass';
+    this.ambientFilter.frequency.setValueAtTime(300, t);
+    this.ambientFilter.Q.value = 1;
+
+    // Slow LFO for filter modulation (waves of sound)
     const lfo = this.context.createOscillator();
     lfo.type = 'sine';
-    lfo.frequency.value = 0.1; // Slow wave
+    lfo.frequency.value = 0.05; // Very slow wave
     const lfoGain = this.context.createGain();
-    lfoGain.gain.value = 5; // +/- 5 Hz variation
+    lfoGain.gain.value = 100; // +/- 100 Hz variation on filter
     lfo.connect(lfoGain);
-    lfoGain.connect(this.ambientOsc.frequency);
+    lfoGain.connect(this.ambientFilter.frequency);
     lfo.start(t);
 
+    // Fade in gently over 3s with a lower max volume
     this.ambientGain.gain.setValueAtTime(0, t);
-    this.ambientGain.gain.linearRampToValueAtTime(0.05, t + 2); // Fade in over 2s
+    this.ambientGain.gain.linearRampToValueAtTime(0.015, t + 3);
 
-    this.ambientOsc.connect(this.ambientGain);
+    this.ambientOsc.connect(this.ambientFilter);
+    this.ambientOsc2.connect(this.ambientFilter);
+    this.ambientFilter.connect(this.ambientGain);
     this.ambientGain.connect(this.context.destination);
 
     this.ambientOsc.start(t);
+    this.ambientOsc2.start(t);
   }
 
-  setAmbientFrequency(freq: number) {
-    if (this.ambientOsc) {
-      this.ambientOsc.frequency.setTargetAtTime(freq, this.context!.currentTime, 0.1);
+  setAmbientFrequency(baseFreq: number) {
+    if (this.ambientOsc && this.ambientOsc2 && this.context) {
+      // Smoothly transition frequencies, keeping a 0.5Hz detune
+      this.ambientOsc.frequency.setTargetAtTime(baseFreq, this.context.currentTime, 0.5);
+      this.ambientOsc2.frequency.setTargetAtTime(baseFreq + 0.5, this.context.currentTime, 0.5);
     }
   }
 
   stopAmbient() {
     if (!this.context || !this.ambientOsc || !this.ambientGain) return;
     const t = this.context.currentTime;
-    this.ambientGain.gain.linearRampToValueAtTime(0.001, t + 1); // Fade out over 1s
-    this.ambientOsc.stop(t + 1.1);
+    this.ambientGain.gain.linearRampToValueAtTime(0.001, t + 1.5); // Fade out over 1.5s
+    
+    this.ambientOsc.stop(t + 1.6);
+    if (this.ambientOsc2) this.ambientOsc2.stop(t + 1.6);
 
     setTimeout(() => {
       this.ambientOsc = null;
+      this.ambientOsc2 = null;
+      this.ambientFilter = null;
       this.ambientGain = null;
-    }, 1100);
+    }, 1600);
   }
 }
 
