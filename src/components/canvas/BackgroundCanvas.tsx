@@ -244,7 +244,7 @@ export function BackgroundCanvas() {
         <ParticleCloud />
         <ShaderBlob />
 
-        <EffectComposer disableNormalPass>
+        <EffectComposer>
           <Bloom
             luminanceThreshold={0.2}
             luminanceSmoothing={0.9}

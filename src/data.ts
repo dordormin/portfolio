@@ -8,7 +8,7 @@ export const translations = {
       location: "Oshawa, Greater Toronto Area, ON",
       linkedin: "https://www.linkedin.com/in/dordor-minetdi-0ab557193/",
       github: "https://github.com/dordormin",
-      summary: "Dynamic Full Stack Developer & AI Engineer with over 8 years of software development experience. Evolving from classic web and JavaScript fundamentals, I bring over 4 years of dedicated expertise in mature full-stack frameworks, including .NET, Spring Boot, Laravel, and Django on the backend, seamlessly paired with modern frontends like React, Angular, and Vite. Currently focusing on AI engineering to bridge robust enterprise architectures with intelligent, data-driven systems, making me a versatile asset for modern software teams.",
+      summary: "Dynamic Full Stack Developer & AI Engineer with 5 years of professional application development experience, built upon an 8-year foundation in the tech industry that began with early web creation. Evolving from those fundamentals and a formal Computer Science background, I bring deep expertise in mature full-stack frameworks, including .NET, Spring Boot, Laravel, and Django on the backend, seamlessly paired with modern frontends like React, Angular, and Vite. I am currently focused on AI engineering to bridge robust enterprise architectures with intelligent, data-driven systems.",
     },
     skills: [
       { category: "Software Architecture & Backend", items: [".NET & C#", "Python (FastAPI, Django)", "Java & Spring Boot", "Node.js", "Entity Framework", "SQLAlchemy"] },
@@ -165,7 +165,7 @@ export const translations = {
       location: "Oshawa, Région de Toronto, ON",
       linkedin: "https://www.linkedin.com/in/dordor-minetdi-0ab557193/",
       github: "https://github.com/dordormin",
-      summary: "Développeur Full Stack & Ingénieur IA dynamique avec plus de 8 ans d'expérience en développement logiciel. Ayant évolué à partir des fondamentaux du web classique et de JavaScript, j'apporte plus de 4 ans d'expertise dédiée dans des frameworks full-stack matures, incluant .NET, Spring Boot, Laravel et Django en backend, ainsi que React, Angular et Vite en frontend. Je me concentre actuellement sur l'ingénierie IA pour relier les architectures logicielles d'entreprise aux systèmes intelligents, me positionnant comme un atout polyvalent pour développer les projets de demain.",
+      summary: "Développeur Full Stack & Ingénieur IA dynamique avec 5 ans d'expérience professionnelle en développement d'applications, bâtis sur 8 ans de parcours dans la tech depuis mes premiers pas en création web. Ayant évolué à partir de ces fondamentaux et d'un baccalauréat en informatique, j'apporte une solide expertise dans les frameworks full-stack d'entreprise, incluant .NET, Spring Boot, Laravel et Django en backend, couplés à React, Angular et Vite en frontend. Je me concentre actuellement sur l'ingénierie IA pour concevoir des systèmes intelligents et bâtir les logiciels de demain.",
     },
     skills: [
       { category: "Architecture Logicielle & Backend", items: [".NET & C#", "Python (FastAPI, Django)", "Java & Spring Boot", "Node.js", "Entity Framework", "SQLAlchemy"] },
