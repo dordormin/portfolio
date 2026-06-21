@@ -10,7 +10,7 @@ class ToneEngine {
   private hoverSynth: Tone.PluckSynth | null = null;
   
   // FX
-  private masterReverb: Tone.Reverb | null = null;
+  private masterReverb: any = null;
   private eq: Tone.EQ3 | null = null;
   private compressor: Tone.Compressor | null = null;
 
@@ -43,10 +43,10 @@ class ToneEngine {
     
     await Tone.start();
     
-    // 1. Setup Master Bus for "Dolby" warmth
-    this.masterReverb = new Tone.Reverb({
-      decay: 6,
-      preDelay: 0.1,
+    // 1. Setup Master Bus for "Dolby" warmth. Use Freeverb to avoid CPU/memory crash in headless browsers.
+    this.masterReverb = new Tone.Freeverb({
+      roomSize: 0.8,
+      dampening: 3000,
       wet: 0.4
     });
     
@@ -78,8 +78,8 @@ class ToneEngine {
       },
       volume: -20
     });
-    // Add specific deep reverb to pad
-    const padReverb = new Tone.Reverb({ decay: 8, wet: 0.6 });
+    // Add specific deep reverb to pad (Freeverb avoids async generation lockups)
+    const padReverb = new Tone.Freeverb({ roomSize: 0.9, dampening: 2000, wet: 0.6 });
     const padFilter = new Tone.Filter(600, 'lowpass');
     this.padSynth.chain(padFilter, padReverb, Tone.Destination);
 
@@ -117,8 +117,7 @@ class ToneEngine {
       this.chordIndex = (this.chordIndex + 1) % this.chords.length;
     }, '2m'); // Every 2 measures
 
-    await padReverb.generate();
-    await this.masterReverb.generate();
+
 
     this.isInitialized = true;
   }
@@ -179,10 +178,9 @@ class ToneEngine {
   // Allow BackgroundCanvas to subtly modulate the filter based on scroll
   public setModulation(value: number) {
     // Value between 0 and 1
-    if (this.padSynth && this.isInitialized) {
-      // Not strictly necessary since we use a static filter now, 
-      // but we can adjust master volume slightly or tempo
-      Tone.Transport.bpm.rampTo(40 + (value * 20), 0.5);
+    if (this.padSynth && this.isInitialized && !this.isMuted) {
+      // Do NOT use rampTo inside useFrame, it queues thousands of automation events and crashes the tab
+      Tone.Transport.bpm.value = 40 + (value * 20);
     }
   }
 }
