@@ -30,7 +30,7 @@ export const translations = {
         institution: "Université de Sherbrooke",
         location: "Sherbrooke, QC, Canada",
         period: "2018 - 2022",
-        logo: "https://upload.wikimedia.org/wikipedia/fr/b/b2/Logo_de_l%27Universit%C3%A9_de_Sherbrooke.svg",
+        logo: "/assets/udes-logo.png",
         highlights: [
           "Specialized concentration in Full Stack Web and Software Development.",
           "Completed multiple corporate co-ops, integrating academic theory with hands-on enterprise software engineering.",
@@ -264,7 +264,7 @@ export const translations = {
         institution: "Université de Sherbrooke",
         location: "Sherbrooke, QC, Canada",
         period: "2018 - 2022",
-        logo: "https://upload.wikimedia.org/wikipedia/fr/b/b2/Logo_de_l%27Universit%C3%A9_de_Sherbrooke.svg",
+        logo: "/assets/udes-logo.png",
         highlights: [
           "Concentration en développement web et logiciel (Full Stack).",
           "Réalisation de plusieurs stages coopératifs en entreprise, fusionnant théorie académique et ingénierie logicielle en milieu corporatif.",
