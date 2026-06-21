@@ -21,7 +21,8 @@ export const translations = {
       { title: "Deep Learning Specialization", issuer: "DeepLearning.AI", date: "Ongoing" },
       { title: "Microsoft Certified: Azure Developer Associate", issuer: "Microsoft", date: "Ongoing" },
       { title: "AWS Cloud Practitioner", issuer: "AWS", date: "Ongoing" },
-      { title: "Become a Software Architect", issuer: "LinkedIn Learning", date: "December 2022" }
+      { title: "Become a Software Architect", issuer: "LinkedIn Learning", date: "December 2022" },
+      { title: "Web Programming & Design Certification", issuer: "Acerfi Cameroun", date: "2018" }
     ],
     experience: [
       {
@@ -98,6 +99,19 @@ export const translations = {
         achievements: [
           "Demonstrated a strong commitment to software quality by identifying and resolving critical defects, significantly enhancing application performance.",
           "Maintained a 100% on-time task completion rate, effectively managing time and prioritizing deliverables within a fast-paced corporate environment."
+        ],
+      },
+      {
+        role: "Web Developer & Designer Intern",
+        company: "Creolink Communications",
+        location: "Douala, Cameroon",
+        period: "2018",
+        responsibilities: [
+          "Initiated early career in tech by contributing to the complete web redesign for a prominent local internet service provider.",
+          "Translated complex UI/UX wireframes from Adobe Photoshop into highly responsive, semantic HTML and CSS layouts.",
+        ],
+        achievements: [
+          "Successfully modernized the company's digital presence, establishing a strong foundational mastery of fundamental web programming."
         ],
       }
     ],
@@ -193,7 +207,8 @@ export const translations = {
       { title: "Spécialisation Deep Learning", issuer: "DeepLearning.AI", date: "En cours" },
       { title: "Microsoft Certified: Azure Developer Associate", issuer: "Microsoft", date: "En cours" },
       { title: "AWS Cloud Practitioner", issuer: "AWS", date: "En cours" },
-      { title: "Devenir Architecte Logiciel", issuer: "LinkedIn Learning", date: "Décembre 2022" }
+      { title: "Devenir Architecte Logiciel", issuer: "LinkedIn Learning", date: "Décembre 2022" },
+      { title: "Formation Programmation Web & Design", issuer: "Acerfi Cameroun", date: "2018" }
     ],
     experience: [
       {
@@ -270,6 +285,19 @@ export const translations = {
         achievements: [
           "Démontré un fort engagement pour la qualité logicielle en résolvant des anomalies critiques, améliorant grandement les performances.",
           "Maintenu un taux d'achèvement de 100% dans les délais impartis, gérant efficacement le temps et les livrables dans un environnement en évolution rapide."
+        ],
+      },
+      {
+        role: "Stagiaire Développeur Web & Designer",
+        company: "Creolink Communications",
+        location: "Douala, Cameroun",
+        period: "2018",
+        responsibilities: [
+          "Initié mon parcours technologique en participant à la refonte web complète pour un fournisseur local majeur de services internet.",
+          "Converti des maquettes UI/UX complexes créées sur Adobe Photoshop en interfaces web responsives et sémantiques (HTML/CSS).",
+        ],
+        achievements: [
+          "Modernisé avec succès l'empreinte numérique de l'entreprise, forgeant ainsi une maîtrise absolue des fondamentaux du web."
         ],
       }
     ],
