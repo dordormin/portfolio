@@ -136,7 +136,7 @@ class ToneEngine {
   }
 
   public playHover() {
-    if (this.isMuted || !this.isInitialized) return;
+    if (this.isMuted || !this.isInitialized || Tone.context.state !== 'running') return;
     
     // Play a high note from the current chord to harmonize
     const currentChord = this.chords[this.chordIndex];
@@ -149,7 +149,7 @@ class ToneEngine {
   }
 
   public playClick() {
-    if (this.isMuted || !this.isInitialized) return;
+    if (this.isMuted || !this.isInitialized || Tone.context.state !== 'running') return;
     
     // Play the root note deeply as a "claque"
     const currentChord = this.chords[this.chordIndex];

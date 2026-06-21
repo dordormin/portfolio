@@ -15,11 +15,25 @@ export function SoundProvider({ children }: { children: React.ReactNode }) {
 
   useEffect(() => {
     const saved = localStorage.getItem('portfolio_muted');
-    if (saved !== null) {
-      const muted = saved === 'true';
-      setIsMuted(muted);
-      toneEngine.setMute(muted);
-    }
+    const initialMuted = saved !== null ? saved === 'true' : true;
+    setIsMuted(initialMuted);
+
+    // AudioContext can only start after a user gesture.
+    const handleFirstInteraction = () => {
+      if (!initialMuted) {
+        toneEngine.setMute(false);
+      }
+      document.removeEventListener('click', handleFirstInteraction);
+      document.removeEventListener('keydown', handleFirstInteraction);
+    };
+
+    document.addEventListener('click', handleFirstInteraction);
+    document.addEventListener('keydown', handleFirstInteraction);
+
+    return () => {
+      document.removeEventListener('click', handleFirstInteraction);
+      document.removeEventListener('keydown', handleFirstInteraction);
+    };
   }, []);
 
   const toggleMute = () => {
