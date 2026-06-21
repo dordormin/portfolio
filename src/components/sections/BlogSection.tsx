@@ -89,14 +89,14 @@ export function BlogSection() {
       {/* Blog Posts */}
       <div className="w-full max-w-4xl px-6 md:px-12 flex flex-col">
         {loading ? (
-          <div className="w-full h-screen flex items-center justify-center">
+          <div className="w-full h-[100dvh] flex items-center justify-center">
             <span className="text-white/50 font-mono animate-pulse">Loading API data...</span>
           </div>
         ) : apiPosts.map((post, index) => (
           <div 
             key={post.id}
             ref={el => { itemsRef.current[index] = el; }}
-            className="w-full h-screen flex items-center justify-center"
+            className="w-full h-[100dvh] flex items-center justify-center"
           >
             {/* The wrapper that actually animates opacity and Y position */}
             <div className="content-wrapper opacity-0 translate-y-12 w-full bg-black/60 backdrop-blur-md border border-white/10 p-8 md:p-16 rounded-3xl shadow-2xl">
@@ -140,7 +140,7 @@ export function BlogSection() {
       </div>
       
       {/* End Space */}
-      <div className="h-screen w-full flex items-center justify-center pointer-events-none">
+      <div className="h-[100dvh] w-full flex items-center justify-center pointer-events-none">
         <span className="text-xs font-mono uppercase tracking-[0.5em] text-white/30">
            {language === 'en' ? 'End of publications' : 'Fin des publications'}
         </span>

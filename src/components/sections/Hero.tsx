@@ -24,7 +24,7 @@ export function Hero() {
   }, []);
 
   return (
-    <section id="hero" className="relative min-h-screen flex flex-col justify-center px-6 sm:px-10 md:px-16 lg:px-24 py-32 md:py-40 overflow-hidden">
+    <section id="hero" className="relative min-h-[100dvh] flex flex-col justify-center px-6 sm:px-10 md:px-16 lg:px-24 py-32 md:py-40 overflow-hidden">
       <div className="max-w-[90rem] w-full mx-auto relative z-10 flex flex-col lg:flex-row items-center justify-between gap-12 sm:gap-16 lg:gap-24">
         
         {/* Left Side: Intro */}
