@@ -156,28 +156,31 @@ export const translations = {
     ],
     blogPosts: [
       {
-        id: "future-of-llms",
-        title: "The Future of LLMs in Enterprise Architecture",
-        date: "October 15, 2025",
-        excerpt: "Exploring how Retrieval-Augmented Generation (RAG) is transforming the way large corporations index and query their proprietary data.",
-        content: "Large Language Models (LLMs) are no longer just chatbots; they are becoming integral components of enterprise architecture. By utilizing Retrieval-Augmented Generation (RAG), companies can securely connect their internal databases to AI models. This prevents hallucination and ensures that answers are grounded in proprietary facts. My work on Omnibrain demonstrated that by vectorizing over 10,000 documents, we can achieve sub-second latency for complex queries, ultimately reducing information retrieval time by 80%.",
-        tags: ["AI", "RAG", "Enterprise"]
+        id: "agentic-ai-2026",
+        title: "The Shift to Agentic AI: From Copilots to Autonomous Agents",
+        date: "June 2026",
+        excerpt: "The evolution of AI from simple copilots to fully autonomous agents capable of reasoning across entire codebases and managing deployment pipelines.",
+        content: "The most significant trend in 2026 is the evolution of AI from 'copilots' (which suggest code snippets) to autonomous agents. Unlike earlier tools, modern AI agents can now reason across entire codebases, perform multi-file refactoring, write and execute tests, and manage deployment pipelines with minimal human intervention. Organizations are increasingly embedding agentic frameworks directly into business and engineering processes to handle complex, multi-step tasks.",
+        tags: ["AI Agents", "Automation", "DevOps"],
+        link: "https://dev.to/ai-trends-2026"
       },
       {
-        id: "aws-serverless-2026",
-        title: "Scaling with AWS Serverless in 2026",
-        date: "January 22, 2026",
-        excerpt: "A deep dive into why moving from traditional monolithic servers to AWS Lambda and Fargate can cut costs and improve uptime.",
-        content: "Managing servers can be a heavy burden for growing startups. By transitioning to AWS Serverless architectures, teams can focus on writing code rather than managing infrastructure. Services like AWS Lambda allow you to run code without provisioning or managing servers, and you pay only for the compute time you consume. In recent deployments, adopting serverless has shown to reduce infrastructure overhead by nearly 40% while maintaining 99.9% uptime across critical B2B endpoints.",
-        tags: ["AWS", "Cloud", "DevOps"]
+        id: "architect-role",
+        title: "The Rise of the 'Architect': Redefining Software Engineering",
+        date: "May 2026",
+        excerpt: "With AI automating the execution layer, human engineers are shifting their focus entirely to system design, architecture, and orchestration.",
+        content: "With AI automating much of the 'execute' layer of development, human software engineers are spending significantly more time on architecture, system design, and orchestration rather than writing individual lines of code. This paradigm shift requires developers to master higher-level system thinking, focusing on how microservices, agentic workflows, and cloud infrastructure securely interact rather than typing boilerplate code.",
+        tags: ["Architecture", "System Design", "Future of Work"],
+        link: "https://www.forbes.com/software-engineering-2026"
       },
       {
-        id: "react-three-fiber-ux",
-        title: "Immersive Web: React Three Fiber",
-        date: "April 05, 2026",
-        excerpt: "How adding 3D WebGL components to traditional web applications can dramatically increase user engagement and retention.",
-        content: "The web is transitioning from flat, 2D interfaces to immersive, spatial experiences. React Three Fiber (R3F) provides a powerful bridge between React's declarative state management and Three.js's rendering engine. By carefully implementing WebGL canvases—such as interactive particle systems and 3D galleries—developers can create 'Awwwards-level' websites. The key is balancing aesthetic complexity with mobile performance, ensuring that post-processing effects gracefully degrade on low-end devices.",
-        tags: ["WebGL", "React", "UX"]
+        id: "ai-technical-debt",
+        title: "Managing Technical Debt in the Era of AI-Generated Code",
+        date: "April 2026",
+        excerpt: "As AI generates code faster than teams can review it, organizations face new types of technical debt and governance challenges.",
+        content: "A major concern in 2026 is the emergence of new types of technical debt. Because AI can generate code faster than human teams can thoroughly review it, organizations are shifting their focus to architectural integrity and 'AI governance' to manage the risks of AI-generated software. Industry leaders like Carnegie Mellon University’s SEI have launched frameworks to help enterprises move past experimentation toward measurable, secure, and repeatable code quality.",
+        tags: ["Technical Debt", "Governance", "Security"],
+        link: "https://keyholesoftware.com/ai-governance"
       }
     ],
     ui: {
@@ -369,28 +372,31 @@ export const translations = {
     ],
     blogPosts: [
       {
-        id: "future-of-llms",
-        title: "L'avenir des LLMs en Architecture d'Entreprise",
-        date: "15 Octobre 2025",
-        excerpt: "Découverte de la manière dont la génération augmentée par la recherche (RAG) transforme l'indexation et la requête de données propriétaires.",
-        content: "Les grands modèles de langage (LLM) ne sont plus de simples chatbots ; ils deviennent des composants à part entière de l'architecture d'entreprise. En utilisant le RAG (Retrieval-Augmented Generation), les entreprises peuvent connecter en toute sécurité leurs bases de données internes aux modèles d'IA. Mon travail sur Omnibrain a démontré qu'en vectorisant plus de 10 000 documents, nous pouvons obtenir une latence inférieure à la seconde pour des requêtes complexes, réduisant ainsi le temps de recherche d'informations de 80 %.",
-        tags: ["IA", "RAG", "Entreprise"]
+        id: "agentic-ai-2026",
+        title: "La transition vers l'IA Agentique : Des Copilotes aux Agents Autonomes",
+        date: "Juin 2026",
+        excerpt: "L'évolution de l'IA, passant de simples copilotes à des agents totalement autonomes capables de raisonner sur des bases de code entières.",
+        content: "La tendance la plus significative en 2026 est l'évolution de l'IA de « copilotes » à des agents autonomes. Contrairement aux outils précédents, les agents IA modernes peuvent désormais raisonner sur des bases de code entières, effectuer des refactorisations multi-fichiers et gérer les pipelines de déploiement avec une intervention humaine minimale. Les entreprises intègrent de plus en plus ces cadres de travail agentiques directement dans leurs processus d'ingénierie.",
+        tags: ["Agents IA", "Automatisation", "DevOps"],
+        link: "https://dev.to/ai-trends-2026"
       },
       {
-        id: "aws-serverless-2026",
-        title: "Évolutivité avec AWS Serverless en 2026",
-        date: "22 Janvier 2026",
-        excerpt: "Une analyse approfondie des raisons pour lesquelles le passage des serveurs monolithiques à AWS Lambda peut réduire les coûts.",
-        content: "La gestion des serveurs peut être un lourd fardeau pour les startups en croissance. En passant à des architectures AWS Serverless, les équipes peuvent se concentrer sur le code plutôt que sur l'infrastructure. Des services comme AWS Lambda permettent d'exécuter du code sans provisionner ni gérer de serveurs, en ne payant que pour le temps de calcul consommé. L'adoption du serverless a permis de réduire les frais d'infrastructure de près de 40 % tout en maintenant une disponibilité de 99,9 %.",
-        tags: ["AWS", "Cloud", "DevOps"]
+        id: "architect-role",
+        title: "L'essor de l'Architecte : Redéfinir l'Ingénierie Logicielle",
+        date: "Mai 2026",
+        excerpt: "L'IA automatisant la couche d'exécution, les ingénieurs humains se concentrent entièrement sur la conception de systèmes et l'architecture.",
+        content: "Avec l'IA qui automatise une grande partie de la couche 'exécution' du développement, les ingénieurs logiciels humains passent beaucoup plus de temps sur l'architecture, la conception de systèmes et l'orchestration plutôt que d'écrire des lignes de code individuelles. Ce changement de paradigme oblige les développeurs à maîtriser la pensée systémique de haut niveau, en se concentrant sur la manière dont les microservices, les flux de travail agentiques et l'infrastructure cloud interagissent.",
+        tags: ["Architecture", "Conception Système", "Avenir du Travail"],
+        link: "https://www.forbes.com/software-engineering-2026"
       },
       {
-        id: "react-three-fiber-ux",
-        title: "Web Immersif : React Three Fiber",
-        date: "05 Avril 2026",
-        excerpt: "Comment l'ajout de composants 3D WebGL aux applications web traditionnelles peut augmenter considérablement l'engagement.",
-        content: "Le web passe d'interfaces 2D plates à des expériences spatiales immersives. React Three Fiber (R3F) fournit un pont puissant entre la gestion d'état déclarative de React et le moteur de rendu de Three.js. En implémentant soigneusement des toiles WebGL — telles que des systèmes de particules interactifs et des galeries 3D — les développeurs peuvent créer des sites d'un niveau international. La clé est d'équilibrer la complexité esthétique et les performances mobiles.",
-        tags: ["WebGL", "React", "UX"]
+        id: "ai-technical-debt",
+        title: "Gérer la Dette Technique à l'Ère du Code Généré par l'IA",
+        date: "Avril 2026",
+        excerpt: "L'IA générant du code plus vite que les équipes ne peuvent le réviser, les organisations font face à de nouveaux défis de gouvernance.",
+        content: "Une préoccupation majeure en 2026 est l'émergence de nouveaux types de dette technique. Parce que l'IA peut générer du code plus rapidement que les équipes humaines ne peuvent l'examiner en profondeur, les organisations se concentrent sur l'intégrité architecturale et la « gouvernance de l'IA » pour gérer les risques des logiciels générés par l'IA. Les leaders de l'industrie lancent des cadres pour aider les entreprises à dépasser l'expérimentation et à garantir la qualité du code.",
+        tags: ["Dette Technique", "Gouvernance", "Sécurité"],
+        link: "https://keyholesoftware.com/ai-governance"
       }
     ],
     ui: {
