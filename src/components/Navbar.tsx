@@ -5,7 +5,6 @@ import { Magnetic } from "./ui/Magnetic";
 import { Logo } from "./ui/Logo";
 import { Home, User, GraduationCap, Briefcase, FolderGit2, BookOpen, Volume2, VolumeX } from "lucide-react";
 import { useSoundContext } from "@/contexts/SoundContext";
-import { synthAudio } from "@/utils/audio";
 
 interface NavbarProps {
   viewMode: 'portfolio' | 'blog';
@@ -15,7 +14,7 @@ interface NavbarProps {
 export function Navbar({ viewMode, setViewMode }: NavbarProps) {
   const [activeSegment, setActiveSegment] = useState("hero");
   const { language, setLanguage } = useLanguage();
-  const { isMuted, toggleMute } = useSoundContext();
+  const { playHover, playClick } = useSoundContext();
 
   const navItems = [
     { name: language === "en" ? "Home" : "Accueil", href: "#hero", icon: Home },
@@ -45,7 +44,7 @@ export function Navbar({ viewMode, setViewMode }: NavbarProps) {
 
   const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
     e.preventDefault();
-    synthAudio.playClick(isMuted);
+    playClick();
     const target = document.querySelector(href);
     if (target) {
       target.scrollIntoView({ behavior: "smooth" });
@@ -89,7 +88,7 @@ export function Navbar({ viewMode, setViewMode }: NavbarProps) {
             <Magnetic key={item.href} intensity={0.3}>
               <a
                 href={item.href}
-                onMouseEnter={() => synthAudio.playHover(isMuted, -0.5)}
+                onMouseEnter={() => playHover()}
                 onClick={(e) => {
                   if (viewMode === 'blog') {
                     setViewMode('portfolio');
@@ -140,9 +139,9 @@ export function Navbar({ viewMode, setViewMode }: NavbarProps) {
         {/* Blog Button */}
         <Magnetic intensity={0.3}>
           <button
-            onMouseEnter={() => synthAudio.playHover(isMuted, 0.5)}
+            onMouseEnter={() => playHover()}
             onClick={() => {
-              synthAudio.playClick(isMuted);
+              playClick();
               setViewMode(viewMode === 'blog' ? 'portfolio' : 'blog');
             }}
             className="group relative flex flex-row md:flex-col items-center justify-center gap-3 md:py-2 transition-all duration-500"

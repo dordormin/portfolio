@@ -11,7 +11,7 @@ import { BlendFunction } from "postprocessing";
 import * as THREE from "three";
 import { BlogJourney3D } from "./BlogJourney3D";
 import { useSoundContext } from "@/contexts/SoundContext";
-import { synthAudio } from "@/utils/audio";
+import { toneEngine } from "@/utils/ToneEngine";
 
 // Global mouse tracker
 const mouse = { x: 0, y: 0 };
@@ -212,10 +212,8 @@ function ShaderBlob() {
       meshRef.current.position.y = currentPos.current.y;
     }
     
-    // Modulate WebGL ambient sound based on the scroll progress and time
-    // Shift from 198 Hz (G3) to 264 Hz (C4) for a pleasant harmonic journey
-    const targetFreq = 198 + (scrollProgress * 66) + Math.sin(time) * 2;
-    synthAudio.setAmbientFrequency(targetFreq);
+    // Modulate Tone.js generative audio engine based on the scroll progress
+    toneEngine.setModulation(scrollProgress);
   });
 
   return (
@@ -308,13 +306,7 @@ export function BackgroundCanvas({ viewMode }: { viewMode: 'portfolio' | 'blog' 
     return () => window.removeEventListener("resize", checkMobile);
   }, []);
 
-  useEffect(() => {
-    if (isMuted) {
-      synthAudio.stopAmbient();
-    } else {
-      synthAudio.startAmbient(isMuted);
-    }
-  }, [isMuted]);
+
 
   return (
     <div className="fixed inset-0 z-0 pointer-events-none opacity-60 mix-blend-screen">
