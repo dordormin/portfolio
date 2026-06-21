@@ -26,14 +26,16 @@ export function Navbar({ viewMode, setViewMode }: NavbarProps) {
 
   useEffect(() => {
     const handleScroll = () => {
-      const sections = navItems.map((item) => document.querySelector(item.href) as HTMLElement);
       const scrollPosition = window.scrollY + window.innerHeight / 3;
 
-      for (let i = sections.length - 1; i >= 0; i--) {
-        const section = sections[i];
-        if (section && section.offsetTop <= scrollPosition) {
-          setActiveSegment(navItems[i].href.substring(1));
-          break;
+      for (let i = navItems.length - 1; i >= 0; i--) {
+        const section = document.querySelector(navItems[i].href) as HTMLElement;
+        if (section) {
+          const sectionTop = section.getBoundingClientRect().top + window.scrollY;
+          if (sectionTop <= scrollPosition) {
+            setActiveSegment(navItems[i].href.substring(1));
+            break;
+          }
         }
       }
     };
