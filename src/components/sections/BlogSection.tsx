@@ -20,7 +20,8 @@ export function BlogSection() {
   useEffect(() => {
     async function fetchNews() {
       try {
-        const response = await fetch("https://dev.to/api/articles?tag=ai&per_page=4");
+        // top=1 fetches the top articles of the current day
+        const response = await fetch("https://dev.to/api/articles?tag=ai&top=1&per_page=4");
         const data = await response.json();
         
         const formattedPosts = data.map((article: any) => ({
