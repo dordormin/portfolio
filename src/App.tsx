@@ -13,6 +13,7 @@ import { ScrollProgress } from './components/ui/ScrollProgress';
 import { Loader } from './components/ui/Loader';
 import { SmoothScroll } from './components/ui/SmoothScroll';
 import { CustomCursor } from './components/ui/CustomCursor';
+import { SoundToggle } from './components/ui/SoundToggle';
 
 export default function App() {
   const [viewMode, setViewMode] = useState<'portfolio' | 'blog'>('portfolio');
@@ -23,6 +24,7 @@ export default function App() {
       <div className="relative min-h-screen flex flex-col md:flex-row text-white antialiased selection:bg-orange-500/30 font-sans bg-background overflow-x-hidden">
         <Loader />
         {viewMode === 'portfolio' && <ScrollProgress />}
+        <SoundToggle />
       {/* Atmospheric Background */}
       <div className="fixed inset-0 z-0 pointer-events-none">
         <div className="absolute top-[-20%] left-[-10%] w-[600px] h-[600px] bg-blue-900/20 rounded-full blur-[120px]"></div>
