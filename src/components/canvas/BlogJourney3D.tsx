@@ -32,6 +32,17 @@ export function BlogJourney3D({ isMobile }: { isMobile: boolean }) {
 
   // Use a ref for smooth scroll interpolation
   const currentScrollProgress = useRef(0);
+  const maxScrollRef = useRef(1000);
+
+  React.useEffect(() => {
+    const updateScroll = () => {
+      maxScrollRef.current = Math.max(1, document.body.scrollHeight - window.innerHeight);
+    };
+    updateScroll();
+    window.addEventListener('resize', updateScroll);
+    setTimeout(updateScroll, 500);
+    return () => window.removeEventListener('resize', updateScroll);
+  }, []);
 
   useFrame((state, rawDelta) => {
     const delta = Math.min(rawDelta, 0.1);
@@ -39,8 +50,7 @@ export function BlogJourney3D({ isMobile }: { isMobile: boolean }) {
 
     // Calculate Scroll Progress (0.0 to 1.0)
     const scrollY = window.scrollY;
-    const maxScroll = Math.max(1, document.body.scrollHeight - window.innerHeight);
-    const targetProgress = Math.min(1, Math.max(0, scrollY / maxScroll));
+    const targetProgress = Math.min(1, Math.max(0, scrollY / maxScrollRef.current));
 
     // Smoothly interpolate current scroll towards target
     currentScrollProgress.current = THREE.MathUtils.damp(

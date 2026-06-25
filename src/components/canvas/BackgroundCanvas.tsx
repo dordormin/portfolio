@@ -14,13 +14,23 @@ import { useSoundContext } from "@/contexts/SoundContext";
 import { toneEngine } from "@/utils/ToneEngine";
 import { hardwareProfiler } from "@/utils/HardwareProfiler";
 
-// Global mouse tracker
+// Global mouse and scroll tracker
 const mouse = { x: 0, y: 0 };
+let cachedMaxScroll = 1000;
+
 if (typeof window !== "undefined") {
   window.addEventListener("mousemove", (e) => {
     mouse.x = (e.clientX / window.innerWidth) * 2 - 1;
     mouse.y = -(e.clientY / window.innerHeight) * 2 + 1;
   });
+  
+  const updateScroll = () => {
+    cachedMaxScroll = document.body.scrollHeight;
+  };
+  
+  window.addEventListener("resize", updateScroll);
+  // Initial calculation after a slight delay to allow rendering
+  setTimeout(updateScroll, 500);
 }
 
 function ShaderBlob({ isMobile }: { isMobile?: boolean }) {
@@ -163,7 +173,7 @@ function ShaderBlob({ isMobile }: { isMobile?: boolean }) {
     // 1. Calculate Scroll Progress (0.0 to 1.0)
     const scrollY = window.scrollY;
     // Fallback maxScroll to 1000 if not available to avoid NaN initially
-    const maxScroll = Math.max(1, document.body.scrollHeight - window.innerHeight);
+    const maxScroll = Math.max(1, cachedMaxScroll - window.innerHeight);
     const scrollProgress = Math.min(1, Math.max(0, scrollY / maxScroll));
 
     // 2. Interpolate Section Values
@@ -270,7 +280,7 @@ function ParticleCloud({ isMobile }: { isMobile: boolean }) {
     if (ref.current) {
       // Calculate Scroll Progress
       const scrollY = window.scrollY;
-      const maxScroll = Math.max(1, document.body.scrollHeight - window.innerHeight);
+      const maxScroll = Math.max(1, cachedMaxScroll - window.innerHeight);
       const scrollProgress = Math.min(1, Math.max(0, scrollY / maxScroll));
 
       // Rotation logic + react to mouse
