@@ -33,7 +33,8 @@ export function BlogJourney3D({ isMobile }: { isMobile: boolean }) {
   // Use a ref for smooth scroll interpolation
   const currentScrollProgress = useRef(0);
 
-  useFrame((state, delta) => {
+  useFrame((state, rawDelta) => {
+    const delta = Math.min(rawDelta, 0.1);
     if (!groupRef.current) return;
 
     // Calculate Scroll Progress (0.0 to 1.0)

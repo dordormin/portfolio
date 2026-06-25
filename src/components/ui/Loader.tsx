@@ -94,7 +94,7 @@ export function Loader() {
 
             {/* Log / Status text */}
             <div className="flex justify-between items-center w-full text-[10px] sm:text-xs">
-              <span className="text-white/40 font-mono uppercase tracking-[0.2em]">
+              <span className="text-white/60 font-mono uppercase tracking-[0.2em]">
                  {displayProgress < 50 ? "Initializing Arsenal..." : `Hardware Allocation: Tier ${hardwareTier}`}
               </span>
               <span className="text-orange-500 font-mono font-bold tracking-wider">

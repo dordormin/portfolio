@@ -84,7 +84,7 @@ SectionRow.Title = function SectionRowTitle({ children, className }: { children:
 SectionRow.Subtitle = function SectionRowSubtitle({ children, className }: { children: ReactNode; className?: string }) {
   useSectionRow();
   return (
-    <div className={cn("text-white/40 text-sm mt-2", className)}>
+    <div className={cn("text-white/60 text-sm mt-2", className)}>
       {children}
     </div>
   );
@@ -104,7 +104,7 @@ SectionRow.Tags = function SectionRowTags({ tags, className }: { tags: string[];
   return (
     <div className={cn("flex flex-wrap gap-3", className)}>
       {tags.map(tag => (
-        <span key={tag} className="text-[10px] sm:text-xs font-mono uppercase tracking-widest text-white/40 border border-white/10 px-4 py-2 rounded-full">
+        <span key={tag} className="text-[10px] sm:text-xs font-mono uppercase tracking-widest text-white/60 border border-white/10 px-4 py-2 rounded-full">
           {tag}
         </span>
       ))}

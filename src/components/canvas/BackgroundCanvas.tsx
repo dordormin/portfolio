@@ -155,7 +155,9 @@ function ShaderBlob({ isMobile }: { isMobile?: boolean }) {
     { pos: new THREE.Vector3(0, 0, -4), color: new THREE.Color("#f97316") }
   ], []);
 
-  useFrame((state, delta) => {
+  useFrame((state, rawDelta) => {
+    // Cap delta to prevent massive jumps or NaN during CPU throttling (like Lighthouse)
+    const delta = Math.min(rawDelta, 0.1);
     const time = state.clock.getElapsedTime();
     
     // 1. Calculate Scroll Progress (0.0 to 1.0)
@@ -263,7 +265,8 @@ function ParticleCloud({ isMobile }: { isMobile: boolean }) {
     return positions;
   }, [isMobile]);
 
-  useFrame((state, delta) => {
+  useFrame((state, rawDelta) => {
+    const delta = Math.min(rawDelta, 0.1);
     if (ref.current) {
       // Calculate Scroll Progress
       const scrollY = window.scrollY;

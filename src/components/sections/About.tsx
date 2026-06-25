@@ -117,13 +117,14 @@ export function About() {
                                   <img 
                                     key={j} 
                                     src={`https://cdn.simpleicons.org/${logo}/white`} 
-                                    alt={logo} 
+                                    alt="" 
+                                    aria-hidden="true"
                                     className="w-6 h-6 md:w-8 md:h-8" 
                                   />
                                 );
                               } else {
                                 const IconComponent = logo;
-                                return <IconComponent key={j} className="w-6 h-6 md:w-8 md:h-8 text-white" strokeWidth={1.5} />;
+                                return <IconComponent key={j} className="w-6 h-6 md:w-8 md:h-8 text-white" strokeWidth={1.5} aria-hidden="true" />;
                               }
                             })
                           ) : (

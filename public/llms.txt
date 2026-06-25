@@ -1,0 +1,21 @@
+# Dordor Minetdi - Portfolio
+
+> Portfolio of Dordor Minetdi, a Full Stack Developer & AI Engineer.
+
+## About
+Dordor Minetdi is a passionate developer who builds robust enterprise software and dynamic web applications.
+
+## Technologies
+- React, Vite, Tailwind CSS, Three.js, GSAP
+- Node.js, Spring Boot, .NET
+- Docker, Kubernetes, GitHub Actions
+
+## Notable Projects
+- **OmniBrain**: A centralized RAG pipeline for enterprises.
+- **TradeoffStack**: An IT and interior management tool for logistics.
+- **Stability Ultra Generator**: A fast serverless AI image generator.
+
+## Contact
+Email: contact@dordorapps.tech
+LinkedIn: https://www.linkedin.com/in/dordor-minetdi-0ab557193/
+GitHub: https://github.com/dordormin

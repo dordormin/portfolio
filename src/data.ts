@@ -172,6 +172,18 @@ export const translations = {
           solution: "Built a robust backend utilizing the Spring Boot ecosystem and Lombok. Developed the frontend parsing engine with HTML and JavaScript to handle drag-and-drop page creation and render a custom theme format. Actively integrated DevOps practices to streamline the software development lifecycle.",
           impact: "Empowered non-technical users to independently design and deploy customized websites. The custom theme format established a scalable foundation for rapidly introducing new visual templates to the platform.",
         }
+      },
+      {
+        id: "ai-image-generator",
+        title: "Stability Ultra Generator",
+        shortDescription: "A simple, fast AI image generator supporting 3 distinct image types.",
+        link: "https://ai-image.dordorapps.tech/",
+        tags: ["React", "Vite", "Cloudflare", "Stable Diffusion", "AI"],
+        caseStudy: {
+          challenge: "Creating a highly accessible and fast AI image generation tool relying on modern serverless architecture to handle inference without complex backend infrastructure.",
+          solution: "Developed a Single Page Application using React and Vite, deeply integrated with Cloudflare's edge capabilities and Stable Diffusion to rapidly generate 3 unique styles of images based on user prompts.",
+          impact: "Delivered a lightweight, highly responsive application demonstrating how edge AI deployment can drastically reduce latency and infrastructure costs for generative tasks.",
+        }
       }
     ],
     blogPosts: [
@@ -411,6 +423,18 @@ export const translations = {
           challenge: "Construire un outil de conception de sites en 'drag-and-drop' avec une empreinte très légère, pensé pour les personnes non formées à la programmation. Requis de supporter plusieurs thèmes en conception dynamique.",
           solution: "Développement du backend grâce à l'écosystème Spring Boot et Lombok. Programmation d'un moteur de génération de pages HTML et JS pour de la conception par glisser-déposer sur base de thèmes personnalisés. Emploi régulier de modules DevOps pendant le cycle de vie.",
           impact: "Permis à des utilisateurs néophytes de déployer leur site seul. Le format de thème conçu posa de solides bases pour l'incorporation de futurs thèmes par le reste de l'équipe, et ce d'une manière incroyablement simple.",
+        }
+      },
+      {
+        id: "ai-image-generator",
+        title: "Stability Ultra Generator",
+        shortDescription: "Un générateur d'images IA simple et rapide supportant 3 types d'images distincts.",
+        link: "https://ai-image.dordorapps.tech/",
+        tags: ["React", "Vite", "Cloudflare", "Stable Diffusion", "AI"],
+        caseStudy: {
+          challenge: "Créer un outil de génération d'images IA très accessible et rapide en s'appuyant sur une architecture serverless moderne pour gérer l'inférence sans infrastructure backend complexe.",
+          solution: "Développement d'une application SPA avec React et Vite, intégrée aux capacités Edge de Cloudflare et à Stable Diffusion pour générer rapidement 3 styles uniques d'images basés sur les prompts des utilisateurs.",
+          impact: "Livraison d'une application légère et hautement réactive démontrant comment le déploiement d'IA à la périphérie (Edge) peut considérablement réduire la latence et les coûts d'infrastructure pour les tâches génératives.",
         }
       }
     ],

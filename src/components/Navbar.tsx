@@ -90,6 +90,7 @@ export function Navbar({ viewMode, setViewMode }: NavbarProps) {
             <Magnetic key={item.href} intensity={0.3}>
               <a
                 href={item.href}
+                aria-label={item.name}
                 onMouseEnter={() => playHover()}
                 onClick={(e) => {
                   if (viewMode === 'blog') {
@@ -103,13 +104,15 @@ export function Navbar({ viewMode, setViewMode }: NavbarProps) {
               >
                 {/* Active Indicator Line */}
                 <span className={cn(
-                  "absolute -left-3 md:-left-4 lg:-left-6 w-1 rounded-r-full bg-orange-500 transition-all duration-500",
-                  isActive ? "h-1/2 opacity-100" : "h-0 opacity-0"
+                  "absolute bg-orange-500 transition-all duration-500",
+                  "-top-4 md:top-auto left-1/2 md:-left-4 lg:-left-6 -translate-x-1/2 md:translate-x-0",
+                  "rounded-b-full md:rounded-b-none md:rounded-r-full",
+                  isActive ? "h-1 w-1/2 md:w-1 md:h-1/2 opacity-100" : "h-1 w-0 md:w-1 md:h-0 opacity-0"
                 )} />
 
                 <Icon className={cn(
                   "w-5 h-5 md:w-6 md:h-6 shrink-0 transition-all duration-500",
-                  isActive ? "text-white" : "text-white/40 group-hover:text-white/80"
+                  isActive ? "text-white" : "text-white/60 group-hover:text-white/80"
                 )} />
 
                 {/* Expanding Vertical Text (Desktop only) */}
@@ -141,6 +144,7 @@ export function Navbar({ viewMode, setViewMode }: NavbarProps) {
         {/* Blog Button */}
         <Magnetic intensity={0.3}>
           <button
+            aria-label={language === 'en' ? '3D Blog' : 'Blog 3D'}
             onMouseEnter={() => playHover()}
             onClick={() => {
               playClick();
@@ -150,13 +154,15 @@ export function Navbar({ viewMode, setViewMode }: NavbarProps) {
           >
             {/* Active Indicator Line */}
             <span className={cn(
-              "absolute -left-3 md:-left-4 lg:-left-6 w-1 rounded-r-full bg-blue-500 transition-all duration-500",
-              viewMode === 'blog' ? "h-1/2 opacity-100" : "h-0 opacity-0"
+              "absolute bg-blue-500 transition-all duration-500",
+              "-top-4 md:top-auto left-1/2 md:-left-4 lg:-left-6 -translate-x-1/2 md:translate-x-0",
+              "rounded-b-full md:rounded-b-none md:rounded-r-full",
+              viewMode === 'blog' ? "h-1 w-1/2 md:w-1 md:h-1/2 opacity-100" : "h-1 w-0 md:w-1 md:h-0 opacity-0"
             )} />
 
             <BookOpen className={cn(
               "w-5 h-5 md:w-6 md:h-6 shrink-0 transition-all duration-500",
-              viewMode === 'blog' ? "text-blue-500 scale-110" : "text-white/40 group-hover:text-blue-400"
+              viewMode === 'blog' ? "text-blue-500 scale-110" : "text-white/60 group-hover:text-blue-400"
             )} />
 
             {/* Expanding Vertical Text (Desktop only) */}
@@ -183,7 +189,7 @@ export function Navbar({ viewMode, setViewMode }: NavbarProps) {
         {/* Bulletproof Safe Centering Spacer (Bottom) */}
         <div className="hidden md:block flex-1 shrink-0 min-h-0"></div>
       </div>
-      <div className="hidden md:flex flex-col gap-4 text-white/40 items-center justify-end shrink-0 pb-6">
+      <div className="hidden md:flex flex-col gap-4 text-white/60 items-center justify-end shrink-0 pb-6">
         <span className="text-[10px] [writing-mode:vertical-rl] rotate-180 tracking-widest">© 2026</span>
       </div>
 

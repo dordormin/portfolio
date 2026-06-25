@@ -70,19 +70,10 @@ export function OSWidget() {
       }
     };
 
-    if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition(
-        (position) => {
-          fetchWeather(position.coords.latitude, position.coords.longitude);
-        },
-        () => {
-          // Fallback to Paris if user denies geolocation
-          fetchWeather(48.8566, 2.3522);
-        }
-      );
-    } else {
-      fetchWeather(48.8566, 2.3522);
-    }
+    // We avoid using navigator.geolocation.getCurrentPosition on load 
+    // to comply with Lighthouse Best Practices (no intrusive permission requests).
+    // Defaults to Paris coordinates.
+    fetchWeather(48.8566, 2.3522);
   }, []);
 
   const WeatherIcon = weather.icon;
@@ -156,7 +147,7 @@ export function OSWidget() {
             transition={{ duration: 15, repeat: Infinity, ease: "easeInOut" }}
           />
         </div>
-        <span className="text-[10px] text-white/40 font-mono tracking-[0.2em] shrink-0 uppercase">{t.sysOk}</span>
+        <span className="text-[10px] text-white/60 font-mono tracking-[0.2em] shrink-0 uppercase">{t.sysOk}</span>
       </div>
     </motion.div>
   );

@@ -21,7 +21,7 @@ export function Contact() {
               </React.Fragment>
             ))}
           </h2>
-          <p className="text-white/40 text-lg leading-relaxed font-light max-w-md">
+          <p className="text-white/60 text-lg leading-relaxed font-light max-w-md">
             {t.ui.contactLead}
           </p>
         </div>
@@ -52,11 +52,11 @@ export function Contact() {
           <div className="flex flex-col gap-4 text-left">
             <div className="flex items-center gap-4">
               <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse"></div>
-              <span className="text-[10px] text-white/40 uppercase tracking-widest">{t.ui.availableForCollab}</span>
+              <span className="text-[10px] text-white/60 uppercase tracking-widest">{t.ui.availableForCollab}</span>
             </div>
-            <span className="text-[10px] text-white/30 tracking-widest">© {new Date().getFullYear()} Dordor Minetdi. <span className="hidden sm:inline">|</span> Portfolio by <a href="https://dordorapps.tech" target="_blank" rel="noopener noreferrer" className="text-white/50 hover:text-white underline decoration-white/20 hover:decoration-white/50 underline-offset-4 transition-all pb-0.5">Dordor Apps</a></span>
+            <span className="text-[10px] text-white/60 tracking-widest">© {new Date().getFullYear()} Dordor Minetdi. <span className="hidden sm:inline">|</span> Portfolio by <a href="https://dordorapps.tech" target="_blank" rel="noopener noreferrer" className="text-white/50 hover:text-white underline decoration-white/20 hover:decoration-white/50 underline-offset-4 transition-all pb-0.5">Dordor Apps</a></span>
           </div>
-          <div className="flex flex-wrap gap-4 sm:gap-8 text-[10px] uppercase tracking-widest text-white/40">
+          <div className="flex flex-wrap gap-4 sm:gap-8 text-[10px] uppercase tracking-widest text-white/60">
             <Magnetic intensity={0.2}>
               <a href={t.personalInfo.linkedin} target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">LinkedIn</a>
             </Magnetic>

@@ -50,9 +50,9 @@ class HardwareProfiler {
     switch (tier) {
       case 1:
         return {
-          dpr: [1, 1.5],
+          dpr: [1, 1], // Capped at 1.0 to prevent GPU driver crashes on 4K screens with post-processing
           effectsEnabled: true,
-          particleCount: 1000,
+          particleCount: 500, // Reduced from 1000 to prevent WebGL memory spikes
           geometrySegments: 32,
         };
       case 2:
