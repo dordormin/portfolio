@@ -40,7 +40,7 @@ export const translations = {
     ],
     experience: [
       {
-        role: "Software Developer",
+        role: "Full Stack Developer",
         company: "COFRD",
         location: "Sherbrooke, QC, Canada",
         period: "April 2023 - Present",
@@ -292,7 +292,7 @@ export const translations = {
     ],
     experience: [
       {
-        role: "Développeur Logiciel",
+        role: "Développeur Full Stack",
         company: "COFRD",
         location: "Sherbrooke, QC, Canada",
         period: "Avril 2023 - Présent",
