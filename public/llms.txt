@@ -16,6 +16,7 @@ Dordor Minetdi is a passionate developer who builds robust enterprise software a
 - **Stability Ultra Generator**: A fast serverless AI image generator.
 
 ## Contact
-Email: contact@dordorapps.tech
-LinkedIn: https://www.linkedin.com/in/dordor-minetdi-0ab557193/
-GitHub: https://github.com/dordormin
+- Email: [contact@dordorapps.tech](mailto:contact@dordorapps.tech)
+- LinkedIn: [Dordor Minetdi](https://www.linkedin.com/in/dordor-minetdi-0ab557193/)
+- GitHub: [dordormin](https://github.com/dordormin)
+- Website: [Portfolio](https://portfolio.dordorapps.tech/)
