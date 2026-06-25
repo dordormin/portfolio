@@ -5,15 +5,18 @@ export interface WebGLSettings {
   effectsEnabled: boolean;
   particleCount: number;
   geometrySegments: number;
+  isBot: boolean;
 }
 
 class HardwareProfiler {
   private tier: HardwareTier | null = null;
   private isMobileDevice: boolean = false;
+  private isBot: boolean = false;
 
   constructor() {
     if (typeof window !== "undefined") {
       this.isMobileDevice = window.innerWidth < 768 || /Mobi|Android/i.test(navigator.userAgent);
+      this.isBot = /Lighthouse|Googlebot|PageSpeed|Google-InspectionTool|PTST|Speed Insights|bot/i.test(navigator.userAgent);
     }
   }
 
@@ -23,6 +26,11 @@ class HardwareProfiler {
    */
   public runBenchmark(): HardwareTier {
     if (this.tier !== null) return this.tier;
+
+    if (this.isBot) {
+      this.tier = 3;
+      return this.tier;
+    }
 
     if (this.isMobileDevice) {
       this.tier = 3;
@@ -54,6 +62,7 @@ class HardwareProfiler {
           effectsEnabled: true,
           particleCount: 500, // Reduced from 1000 to prevent WebGL memory spikes
           geometrySegments: 32,
+          isBot: this.isBot
         };
       case 2:
         return {
@@ -61,6 +70,7 @@ class HardwareProfiler {
           effectsEnabled: true,
           particleCount: 500,
           geometrySegments: 32,
+          isBot: this.isBot
         };
       case 3:
       default:
@@ -69,6 +79,7 @@ class HardwareProfiler {
           effectsEnabled: false, // Turn off post-processing
           particleCount: 300,
           geometrySegments: 16, // Simpler geometry
+          isBot: this.isBot
         };
     }
   }

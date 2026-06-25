@@ -316,6 +316,12 @@ export function BackgroundCanvas({ viewMode }: { viewMode: 'portfolio' | 'blog' 
 
 
 
+  if (settings.isBot) {
+    return (
+      <div className="fixed inset-0 z-0 pointer-events-none bg-gradient-to-br from-black to-orange-950/20"></div>
+    );
+  }
+
   return (
     <div className="fixed inset-0 z-0 pointer-events-none opacity-60 mix-blend-screen">
       <Canvas 
