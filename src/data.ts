@@ -61,7 +61,7 @@ export const translations = {
         company: "Kolineo",
         location: "Sherbrooke, QC, Canada",
         period: "September 2021 - December 2021",
-        logo: "https://ui-avatars.com/api/?name=Kolineo&background=f97316&color=fff&bold=true&size=200",
+        logo: "https://jechoisismonemployeur.com/wp-content/uploads/2024/08/kolineo-logo.webp",
         responsibilities: [
           "Led full-lifecycle software development as an Analyst Programmer, overseeing requirements analysis, DevOps, and deployment pipelines.",
           "Engineered robust B2B REST APIs and complex ORMs (SQLAlchemy, Python, Django) to integrate Kolineo's warehousing and redistribution systems with external enterprise clients (e.g., Amazon, Costco).",
@@ -313,7 +313,7 @@ export const translations = {
         company: "Kolineo",
         location: "Sherbrooke, QC, Canada",
         period: "Janvier 2022 - Août 2022",
-        logo: "https://ui-avatars.com/api/?name=Kolineo&background=f97316&color=fff&bold=true&size=200",
+        logo: "https://jechoisismonemployeur.com/wp-content/uploads/2024/08/kolineo-logo.webp",
         responsibilities: [
           "Mené le cycle de développement logiciel en tant qu'Analyste Programmeur, supervisant l'analyse des besoins, le DevOps et les pipelines de déploiement.",
           "Conçu des API REST B2B et des modèles ORM (SQLAlchemy, Python, Django) pour intégrer les systèmes d'entreposage et de redistribution de Kolineo avec des clients entreprises (ex: Amazon, Costco).",
