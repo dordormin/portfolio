@@ -128,7 +128,7 @@ export const translations = {
         logo: "https://static2.ikwen.com/econnect/img/creolink_logo_portrait.png",
         responsibilities: [
           "Initiated early career in tech by contributing to the complete web redesign for a prominent local internet service provider.",
-          "Translated UI/UX wireframes from Adobe Photoshop into responsive layouts using HTML, CSS, Bootstrap, and JavaScript.",
+          "Prepared media, images, and logos using Adobe Photoshop, and built responsive layouts in Adobe Dreamweaver using HTML, CSS, Bootstrap, and JavaScript.",
           "Developed and maintained dynamic server-side functionalities utilizing PHP and WAMP architecture."
         ],
         achievements: [
@@ -380,7 +380,7 @@ export const translations = {
         logo: "https://static2.ikwen.com/econnect/img/creolink_logo_portrait.png",
         responsibilities: [
           "Initié mon parcours technologique en participant à la refonte web complète pour un fournisseur local majeur de services internet.",
-          "Converti des maquettes UI/UX complexes (Photoshop) en interfaces responsives avec HTML, CSS, Bootstrap et JavaScript.",
+          "Préparé les médias, images et logos avec Adobe Photoshop, et développé les interfaces responsives sur Adobe Dreamweaver avec HTML, CSS, Bootstrap et JavaScript.",
           "Développé des fonctionnalités dynamiques côté serveur en s'appuyant sur l'architecture PHP et WAMP."
         ],
         achievements: [
