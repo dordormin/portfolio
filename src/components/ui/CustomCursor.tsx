@@ -45,10 +45,9 @@ export function CustomCursor() {
           opacity: isHovering ? 0 : 1
         }}
         transition={{
-          type: "spring",
-          stiffness: 500,
-          damping: 28,
-          mass: 0.5
+          x: { type: "tween", duration: 0 },
+          y: { type: "tween", duration: 0 },
+          default: { duration: 0.15 }
         }}
       />
       <motion.div
@@ -60,10 +59,9 @@ export function CustomCursor() {
           backgroundColor: isHovering ? 'rgba(249, 115, 22, 0.1)' : 'rgba(249, 115, 22, 0)',
         }}
         transition={{
-          type: "spring",
-          stiffness: 250,
-          damping: 20,
-          mass: 0.8
+          x: { type: "spring", stiffness: 800, damping: 35, mass: 0.1 },
+          y: { type: "spring", stiffness: 800, damping: 35, mass: 0.1 },
+          default: { duration: 0.2 }
         }}
       />
     </div>
