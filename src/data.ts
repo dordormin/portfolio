@@ -42,7 +42,7 @@ export const translations = {
       {
         role: "Full Stack Developer",
         company: "COFRD",
-        location: "Sherbrooke, QC, Canada",
+        location: "Oshawa, ON, Canada",
         period: "April 2023 - Present",
         logo: "https://www.cofrd.org//wp-content/uploads/logo-noBg.png",
         responsibilities: [
@@ -108,7 +108,7 @@ export const translations = {
         role: "Software Developer | QA Engineer, Coop",
         company: "SAP Labs Canada",
         location: "Montreal, QC, Canada",
-        period: "September 2022 - December 2022",
+        period: "January 2020 - April 2020",
         logo: "https://upload.wikimedia.org/wikipedia/commons/5/59/SAP_2011_logo.svg",
         responsibilities: [
           "Developed high-quality software solutions utilizing rigorous Test-Driven Development (TDD) methodologies.",
@@ -294,7 +294,7 @@ export const translations = {
       {
         role: "Développeur Full Stack",
         company: "COFRD",
-        location: "Sherbrooke, QC, Canada",
+        location: "Oshawa, ON, Canada",
         period: "Avril 2023 - Présent",
         logo: "https://www.cofrd.org//wp-content/uploads/logo-noBg.png",
         responsibilities: [
@@ -360,7 +360,7 @@ export const translations = {
         role: "Développeur Logiciel | Ingénieur QA, Coop",
         company: "SAP Labs Canada",
         location: "Montréal, QC, Canada",
-        period: "Septembre 2022 - Décembre 2022",
+        period: "Janvier 2020 - Avril 2020",
         logo: "https://upload.wikimedia.org/wikipedia/commons/5/59/SAP_2011_logo.svg",
         responsibilities: [
           "Développé des solutions logicielles en utilisant la méthodologie rigoureuse de Test-Driven Development (TDD).",
@@ -376,7 +376,7 @@ export const translations = {
         role: "Développeur Web & Designer Stagiaire",
         company: "CREOLINK Communications",
         location: "Yaoundé, Cameroun",
-        period: "2017 - 2018",
+        period: "Juin 2017 - Août 2017",
         logo: "https://static2.ikwen.com/econnect/img/creolink_logo_portrait.png",
         responsibilities: [
           "Initié mon parcours technologique en participant à la refonte web complète pour un fournisseur local majeur de services internet.",
